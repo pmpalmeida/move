@@ -1,0 +1,8 @@
+<h1>show de users / users controller</h1>
+
+<%= @user %>
+<% if @pprofile == nil %>
+  <p>public profile nao existe</p>
+<% else %>
+  <%= @pprofile %>
+<% end %>
