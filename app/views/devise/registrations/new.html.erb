@@ -4,6 +4,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+
+
+    <%= f.input :name, required: true, autofocus: true %>
+
+    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Mulher (Modelo)" %> </div>
+    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Homem" %> </div>
+
+
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
