@@ -1,14 +1,32 @@
 <h1>show de users / users controller</h1>
 
-<%= @user %>
+<p>user</p>  <%= @user %>
+<p>user name</p>  <%= @user.name %>
+  <br>
+<p>user emal</p>  <%= @user.email %>
+  <br>
+<p>pprofile name</p>  <%= @pprofile.name %>
+  <br>
+<p>pprofile phone_number</p>  <%= @pprofile.phone_number %>
+  <br>
+<p>user name</p>  <%= @user.name %>
+  <% if @pprofile == nil %>
+    <p>public profile nao existe</p>
+<p>user name</p>    <%= @user.cities[0] %>
+  <% else %>
+<p>user name</p>    <%= @pprofile %>
+  <% end %>
+
+
 <br>
-<%= @user.email %>
 <br>
-<%= @user.name %>
-<% if @pprofile == nil %>
-  <p>public profile nao existe</p>
-  <%= @user.cities[0] %>
-<% else %>
-  <%= @pprofile %>
+<p>user cities</p>
+<% @user.cities.each do |city| %>
+  <%= city.name %>
 <% end %>
 
+<br>
+<% city = City.first %>
+<% city.users.each do |user| %>
+  <%= user.name %>
+<% end %>
