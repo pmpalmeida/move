@@ -1,8 +1,14 @@
 <h1>show de users / users controller</h1>
 
 <%= @user %>
+<br>
+<%= @user.email %>
+<br>
+<%= @user.name %>
 <% if @pprofile == nil %>
   <p>public profile nao existe</p>
+  <%= @user.cities[0] %>
 <% else %>
   <%= @pprofile %>
 <% end %>
+
