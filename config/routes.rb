@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show ]
   resources :cities, only: [ :show ]
-  resources :pprofiles, only: [ :update, :destroy ]
+  resources :pprofiles, only: [ :update, :destroy, :show ]
 
 
 
