@@ -2,6 +2,7 @@
 
 <div class="container">
 
+<!-- EDICAO DO PERFIL DE USUARIO -->
 <div class="thumbnail" style="padding: 10px; margin-top: 20px">
   <div class="card card-block">
     <h4 class="card-title text-center"><strong>Perfil de usuario</strong></h4>
@@ -13,6 +14,39 @@
     </div>
   </div>
 </div>
+<!-- FIM: EDICAO DO PERFIL DE USUARIO -->
+
+<!-- EDICAO DO PERFIL PUBLICO DO USUARIO -->
+<div class="thumbnail" style="padding: 10px; margin-top: 20px">
+  <div class="card card-block">
+    <h4 class="card-title text-center"><strong>Perfil publico (dados do anuncio)</strong></h4>
+
+    <p class="card-text pmargin0"> <strong>Nome anunciado:</strong> <%= @pprofile.name %> </p>
+    <p class="card-text pmargin0"><strong>Tel: </strong><%= @pprofile.phone_number %> </p>
+    <p class="card-text pmargin0"><strong> Cidade: </strong><%= @pprofile.city %> </p>
+    <p class="card-text pmargin0"> <strong>Fotos:</strong></p>
+
+    <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
+
+    <p class="card-text pmargin0"><strong> Descricao: </strong><%= @pprofile.description %> </p>
+    <br>
+
+    <p class="card-text pmargin0"><strong> Site: </strong><%= @pprofile.site %></p>
+    <p class="card-text pmargin0"><strong> Forum: </strong><%= @pprofile.forum %></p>
+    <p class="card-text pmargin0"><strong> Instagram: </strong><%= @pprofile.instagram %></p>
+    <p class="card-text pmargin0"><strong> Twitter: </strong><%= @pprofile.twitter %></p>
+
+    <div class="card-block">
+      <h4 class="card-title text-center"><strong><%= @pprofile.name %></strong></h4>
+
+      <p class="card-text text-center"> <%= @user.email %></p>
+
+      <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-primary" %></center>
+    </div>
+  </div>
+</div>
+<!-- FIM: EDICAO DO PERFIL PUBLICO DO USUARIO -->
+
 
 </div>
 

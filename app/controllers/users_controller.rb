@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if current_user == @user
       if !@user.pprofile.nil?
         @pprofile = @user.pprofile
+        @pprofile.city = @user.cities.first.name
       end
     else
       redirect_to root_path
