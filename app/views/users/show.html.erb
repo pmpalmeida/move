@@ -19,15 +19,22 @@
 <!-- EDICAO DO PERFIL PUBLICO DO USUARIO -->
 <div class="thumbnail thumbstyle">
   <div class="card card-block">
-    <h4 class="card-title text-center"><strong>Anuncio</strong></h4>
+  <h4 class="card-title text-center"><strong>Anuncio</strong></h4>
 
-    <p class="card-text text-center pmargin0"> <strong> <%= @pprofile.name %> </strong></p>
+
+    <%= link_to "Anunciar", edit_user_registration_path, class: "btn btn-primary btn-block" %>
+    <%= link_to "Editar anuncio", edit_user_registration_path, class: "btn btn-primary btn-block" %>
+
+
     <br>
 
+<!-- CONTACT INFO-->
+    <center><p class="card-text"> <strong> <%= @pprofile.name %> </strong></p></center>
     <p class="card-text pmargin0"> <strong>Contato:</strong></p>
     <p class="card-text pmargin0"><strong><i class="fa fa-phone-square fa-fw"></i></strong><%= @pprofile.phone_number %> </p>
     <p class="card-text pmargin0"><strong> <i class="fa fa-map-marker fa-fw"></i> </strong><%= @pprofile.city %> </p>
     <br>
+<!-- FIM: CONTACT INFO-->
 
 <!-- CAROUSEL WITH PCTURES -->
 <div>
@@ -80,7 +87,6 @@
 
 
     <div class="card-block">
-      <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-primary" %></center>
     </div>
   </div>
 </div>
