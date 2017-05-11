@@ -8,6 +8,8 @@ class UsersController < ApplicationController
       if !@user.pprofile.nil?
         @pprofile = @user.pprofile
         @pprofile.city = @user.cities.first.name
+      else
+        @pprofile = Pprofile.find(2)
       end
     else
       redirect_to root_path
