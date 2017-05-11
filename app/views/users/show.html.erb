@@ -9,7 +9,7 @@
     <div class="card-block">
       <h4 class="card-title text-center"><strong><%= @user.name %></strong></h4>
       <p class="card-text text-center"> <%= @user.email %></p>
-       <center><a href="#" class="btn btn-primary">Editar</a></center>
+      <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-primary" %></center>
     </div>
   </div>
 </div>
