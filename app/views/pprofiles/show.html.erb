@@ -75,13 +75,12 @@
       <p class="pmarginpost""><%= @pprofile.name %> - <%= @pprofile.phone_number.to_s %></p>
       <p class="pmarginpost"><%= @pprofile.city %> - Bairro: <%= @pprofile.name %> </p>
     </div>
+    <br>
   </div>
   <div class="card card-block">
-    <h4 class="card-title text-center"><strong>Perfil</strong></h4>
-    <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
+    <center><img class="card-img-top" src="http://www.fillmurray.com/300/300"></center>
     <div class="card-block">
-      <h4 class="card-title text-center"><strong><%= @pprofile.name %></strong></h4>
-      <p class="card-text text-center"> <%= @pprofile.instagram %></p>
+    <br>
       <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-danger btn-block" %></center>
     </div>
 
