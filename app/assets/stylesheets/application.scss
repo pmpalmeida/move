@@ -22,20 +22,55 @@
   margin: 2px;
 }
 
+.pmargin1 {
+  margin: 2px;
+  font-size: 20px;
+  color: white;
+
+}
+
+.pmargin2 {
+  margin: 2px;
+  font-size: 15px;
+  color: white;
+}
+
+.pmarginpost {
+  margin: 2px;
+  font-size: 12px;
+  color: black;
+}
+
 .thumbstyle {
   padding: 10px;
   margin-top: 20px;
 }
 
+.thumbstyle2 {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #40434E;
+}
+
 //wrapper da view do user
 .wrapper-grey {
   // background: #CCCCCC;
-  background: #1A1A1A;
-  padding: 30px 0;
+   background: #1A1A1A;
+  // background: #000000;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // padding: 30px 0;
 }
 
 .flexshow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.flexshow2 {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin-left: 5px;
 }
