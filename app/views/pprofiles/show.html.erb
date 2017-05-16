@@ -4,13 +4,13 @@
   <br>
 
   <div class=flexshow2>
-  <div>
-  <img class="card-img-top img-circle" src="http://www.fillmurray.com/50/50" style="margin-right: 5px">
-  </div>
-  <div>
-  <p class="pmargin1"><%= @pprofile.name %> - <%= @pprofile.phone_number.to_s %></p>
-  <p class="pmargin2"><%= @pprofile.city %> - Bairro: <%= @pprofile.name %> </p>
-  </div>
+    <div>
+      <img class="card-img-top img-circle" src="http://www.fillmurray.com/50/50" style="margin-right: 5px">
+    </div>
+    <div>
+      <p class="pmargin1"><%= @pprofile.name %> - <%= @pprofile.phone_number.to_s %></p>
+      <p class="pmargin2"><%= @pprofile.city %> - Bairro: <%= @pprofile.name %> </p>
+    </div>
   </div>
 
 <!-- carousel begininh -->
@@ -60,9 +60,35 @@
   <center><a class="card-text pmargin2">Website: <%= @pprofile.site %></a></center>
   <center><a class="card-text pmargin2">Forum: <%= @pprofile.forum %></a></center>
   <br>
+  </div>
 
 </div>
 </div>
+
+<div class="container">
+<div class="thumbnail thumbstyle">
+  <div class=flexshow2>
+    <div>
+      <img class="card-img-top img-circle" src="http://www.fillmurray.com/40/40" style="margin-right: 5px">
+    </div>
+    <div>
+      <p class="pmarginpost""><%= @pprofile.name %> - <%= @pprofile.phone_number.to_s %></p>
+      <p class="pmarginpost"><%= @pprofile.city %> - Bairro: <%= @pprofile.name %> </p>
+    </div>
+  </div>
+  <div class="card card-block">
+    <h4 class="card-title text-center"><strong>Perfil</strong></h4>
+    <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
+    <div class="card-block">
+      <h4 class="card-title text-center"><strong><%= @pprofile.name %></strong></h4>
+      <p class="card-text text-center"> <%= @pprofile.instagram %></p>
+      <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-danger btn-block" %></center>
+    </div>
+
+  <br>
+</div>
+</div>
+
 
 <h1>show pprofile</h1>
 <p> Nome: <%= @pprofile.name %> </p>
