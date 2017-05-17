@@ -39,7 +39,7 @@
 
 .fb-image-profile
 {
-    margin: -30px 10px 0px 25px;
+    margin: -40px 10px 0px 25px;
     z-index: 9;
 
 }
@@ -64,6 +64,18 @@
 
 
 <hr/>
+
+  <div class="container">
+  <div class="thumbnail">
+    <div>
+      <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
+      <div class="fb-profile-text">
+          <h2><%= @pprofile.name %></h2>
+          <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
 
