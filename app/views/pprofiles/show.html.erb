@@ -5,6 +5,8 @@
     z-index: 0;
     width: 100%;
     margin-bottom: 10px;
+    position: fixed;
+
 }
 
 .fb-image-profile
@@ -12,6 +14,7 @@
     margin: -90px 10px 0px 20px;
     z-index: 9;
     width: 20%;
+
 }
 
 @media (max-width:768px)
@@ -47,20 +50,132 @@
 </style>
 
 
-    <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/400/nightlife/5/" alt="Profile image example"/>
-        <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
-        <div class="fb-profile-text">
-            <h1><%= @pprofile.name %></h1>
-            <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+<div class="fb-profile">
+
+  <!-- CAROUSEL BEGINING **************************8888-->
+
+  <!-- ...... -->
+    <style>
+      .img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+
+.carousel-inner {
+  border-radius: 15px;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+
+/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+
+    </style>
+  <!-- ...... -->
+
+  <section class="section-white">
+
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="http://placehold.it/850x400" alt="...">
         </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/850x400" alt="...">
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
     </div>
-    <br>
-    <br>
-    <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
-     <center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
-      <center><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></center>
-      <center><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></center>
+  <!-- CAROUSEL END ************************************-->
+
+
+
+  <!-- PROFILE BEGINING -->
+  <img align="left" class="fb-image-profile thumbnail" style="position: relative;" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+
+  <div class="fb-profile-text">
+    <h1><%= @pprofile.name %></h1>
+    <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+  </div>
+  <!-- PROFILE END -->
+</div>
+
+<br>
+<br>
+
+<center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
+<center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
+<center><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></center>
+<center><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></center>
 
 
 <hr/>
