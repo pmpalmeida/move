@@ -1,4 +1,92 @@
 
+
+<style>
+  .fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 20px;
+    z-index: 9;
+    width: 20%;
+}
+
+@media (max-width:768px)
+{
+
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+    margin: 0px;
+}
+
+.fb-profile-text>h2{
+    font-weight: 500;
+    font-size:12px;
+    margin: 0px;
+    margin-top: 5px
+}
+
+.fb-profile-text>p{
+    font-weight: 500;
+    font-size:12px;
+    margin: 0px;
+    width: 80%
+}
+
+.fb-image-profile
+{
+    margin: -40px 10px 0px 25px;
+    z-index: 9;
+
+}
+}
+</style>
+
+
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/400/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1><%= @pprofile.name %></h1>
+            <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
+     <center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
+      <center><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></center>
+      <center><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></center>
+
+
+<hr/>
+
+  <div class="container">
+  <div class="thumbnail">
+    <div>
+      <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
+      <div class="fb-profile-text">
+          <h2><%= @pprofile.name %></h2>
+          <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+<br>
+<br>
+
+
 <div class="wrapper-grey">
 <div class="container">
   <br>
@@ -75,13 +163,12 @@
       <p class="pmarginpost""><%= @pprofile.name %> - <%= @pprofile.phone_number.to_s %></p>
       <p class="pmarginpost"><%= @pprofile.city %> - Bairro: <%= @pprofile.name %> </p>
     </div>
+    <br>
   </div>
   <div class="card card-block">
-    <h4 class="card-title text-center"><strong>Perfil</strong></h4>
-    <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
+    <center><img class="card-img-top" src="http://www.fillmurray.com/300/300"></center>
     <div class="card-block">
-      <h4 class="card-title text-center"><strong><%= @pprofile.name %></strong></h4>
-      <p class="card-text text-center"> <%= @pprofile.instagram %></p>
+    <br>
       <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-danger btn-block" %></center>
     </div>
 
