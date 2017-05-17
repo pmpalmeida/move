@@ -17,25 +17,25 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/850x400" alt="...">
+          <img src="http://placehold.it/700x320" alt="...">
         </div>
       </div>
 
@@ -56,7 +56,7 @@
 
   <div class="fb-profile-text">
     <h1><%= @pprofile.name %></h1>
-    <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+    <h2><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
   </div>
   <!-- PROFILE END -->
 </div>
@@ -72,18 +72,28 @@
 
 <hr/>
 
+
+<!-- POSTS BEGINING -->
+
   <div class="container">
   <div class="thumbnail">
-    <div>
+    <div class="flexpost">
       <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
-      <div class="fb-profile-text">
-          <h2><%= @pprofile.name %></h2>
-          <h2><%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+      <div>
+          <h3 class="headerpost"><%= @pprofile.name %></h3>
+          <h3 class="headerpost"><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h3>
       </div>
     </div>
+
+    <img align="center" src="http://placehold.it/200x200" alt="Profile image example"/>
+
+    <h3 align="right" class="headerpost"><%= @pprofile.created_at.strftime("%d %b %Y")%></h3>
+
   </div>
   </div>
 
+<!-- POSTS ENDING -->
+
 
 
 
@@ -94,7 +104,13 @@
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
 
 
 <div class="wrapper-grey">

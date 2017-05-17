@@ -18,6 +18,18 @@
 
 // MINOR ADJUSTMENTS
 
+.headerpost {
+  margin: 2px;
+  font-size: 12px;
+}
+
+.flexpost {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
 .pmargin0 {
   margin: 2px;
 }
@@ -32,7 +44,7 @@
 .pmargin2 {
   margin: 2px;
   font-size: 15px;
-  color: white;
+  color: black;
 }
 
 .pmarginpost {
