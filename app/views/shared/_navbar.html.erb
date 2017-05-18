@@ -1,14 +1,10 @@
+
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "move-logo.png" %>
   <% end %>
-
-  <% if current_user.pprofile == @pprofile%>
-  <% if current_user.is_female %>
-  <%= link_to "POST", edit_user_registration_path, class: "btn btn-danger btn-circle btn-xl" %>
-  <%end%>
-  <%end%>
 
   <!-- Right Navigation -->
    <div class="dropdown">
