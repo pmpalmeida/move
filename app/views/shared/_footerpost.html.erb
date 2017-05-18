@@ -1,0 +1,28 @@
+
+<% if current_user.pprofile == @pprofile%>
+  <% if current_user.is_female %>
+    <style>
+    .navbar-post-local {
+      position: fixed;
+      bottom: 0;
+      z-index: 1000;
+      background: black;
+      transition: all 0.3s ease;
+      display: flex;
+      height: 40px;
+      padding: 0px 30px;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+    }
+    </style>
+
+  <div class="navbar-post-local">
+  <i class="fa fa-home fa-2x pull-left" aria-hidden="true"></i>
+   <%= link_to "POST", edit_user_registration_path, class: "btn btn-danger btn-circle btn-lg", style: "font-size: 12px" %>
+   <i class="fa fa-user fa-2x pull-lef" aria-hidden="true"></i>
+  </div>
+
+  <%end%>
+<%end%>
+
