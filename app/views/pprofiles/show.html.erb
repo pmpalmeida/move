@@ -66,35 +66,142 @@
 
 <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
 <center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
-<center><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></center>
-<center><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></center>
+<center><small><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></small></center>
+<center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
 
 
 <hr/>
 
 
 <!-- POSTS BEGINING -->
+<!-- BOOTSTRAP GRID BEGINING -->
 
-  <div class="container">
-  <div class="thumbnail">
-    <div class="flexpost">
-      <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
-      <div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+      <div class="thumbnail">
+
+      <h3 class="pull-right headerpost"><%= @pprofile.created_at.strftime("%d %b %Y")%></h3>
+
+        <div class="flexpost">
+          <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
+        <div>
           <h3 class="headerpost"><%= @pprofile.name %></h3>
           <h3 class="headerpost"><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h3>
+        </div>
+        </div>
+          <img align="center" src="http://placehold.it/200x200" alt="Profile image example"/>
+
+          <h3 class="headerpost">146 Likes</h3>
+
+          <h3 align="left" class="headerpost" style="padding: 5px">testenado comentarios dos posts se nao untrapassam a largura do containet e assim por diante ate que nao caiba mais</h3>
+          <center><i class="fa fa-heart-o" aria-hidden="true"></i> <i class="fa fa-comment-o" aria-hidden="true"></i> <i class="fa fa-trash-o" aria-hidden="true"></i></center>
+          <hr/>
+
+        <!-- COMMENTS BEGINING -->
+
+
+                    <h3><small class="pull-right">45 commentarios</small> Commentarios </h3>
+                    <br>
+
+
+                           <h3 class="pull-right headerpost">5 days ago</h3>
+
+                              <div class="flexshow2">
+                              <a class="media-left" href="#">
+                                <img src="http://lorempixel.com/40/40/people/1/">
+                              </a>
+                              <h3 class="headerpost"><strong>Baltej Singh</strong></h3>
+                              </div>
+
+                              <h3 class="headerpost" style="padding: 8px">Wow! this is really great. Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.Wow! this is really great.</h3>
+
+                              <h3 class="headerpost" style="margin-bottom: 8px"><a href="">Like</a> - <a href="">Share</a> - <a href="">Delete</a></h3>
+
+                              <!-- xx -->
+
+                              <h3 class="pull-right headerpost">5 days ago</h3>
+
+                              <div class="flexshow2">
+                              <a class="media-left" href="#">
+                                <img src="http://lorempixel.com/40/40/people/1/">
+                              </a>
+                              <h3 class="headerpost"><strong>Baltej Singh</strong></h3>
+                              </div>
+
+                              <h3 class="headerpost" style="padding: 8px">Wow! this is really great. Wow! this is really great.Wow! this is really great.</h3>
+
+                              <h3 class="headerpost" style="margin-bottom: 8px"><a href="">Like</a> - <a href="">Share</a> - <a href="">Delete</a></h3>
+
+                              <!-- xx -->
+
+                              <h3 class="pull-right headerpost">5 days ago</h3>
+
+                              <div class="flexshow2">
+                              <a class="media-left" href="#">
+                                <img src="http://lorempixel.com/40/40/people/1/">
+                              </a>
+                              <h3 class="headerpost"><strong>Baltej Singh</strong></h3>
+                              </div>
+
+                              <h3 class="headerpost" style="padding: 8px">Wow! this is really great. Wow! this is really great.Wow! this is really great.</h3>
+
+                              <h3 class="headerpost" style="margin-bottom: 8px"><a href="">Like</a> - <a href="">Share</a> - <a href="">Delete</a></h3>
+
+
+
+
+
+                           <p class="pull-right"><small>5 days ago</small></p>
+                            <a class="media-left" href="#">
+                              <img src="http://lorempixel.com/40/40/people/2/">
+                            </a>
+
+
+                              <h4 class="media-heading user_name">Baltej Singh</h4>
+                              Wow! this is really great.
+
+                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+
+
+
+                           <p class="pull-right"><small>5 days ago</small></p>
+                            <a class="media-left" href="#">
+                              <img src="http://lorempixel.com/40/40/people/3/">
+                            </a>
+                            <div class="media-body">
+
+                              <h4 class="media-heading user_name">Baltej Singh</h4>
+                              Wow! this is really great.
+
+                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                            </div>
+
+                       <div class="media">
+                           <p class="pull-right"><small>5 days ago</small></p>
+                            <a class="media-left" href="#">
+                              <img src="http://lorempixel.com/40/40/people/4/">
+                            </a>
+                            <div class="media-body">
+
+                              <h4 class="media-heading user_name">Baltej Singh</h4>
+                              Wow! this is really great.
+
+                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                            </div>
+                          </div>
+
+
+        <!-- COMMENTS ENDING -->
+
+
       </div>
     </div>
-
-    <img align="center" src="http://placehold.it/200x200" alt="Profile image example"/>
-
-    <h3 align="right" class="headerpost"><%= @pprofile.created_at.strftime("%d %b %Y")%></h3>
-
   </div>
-  </div>
+</div>
 
+<!-- BOOTSTRAP GRID ENDING -->
 <!-- POSTS ENDING -->
-
-
 
 
 
