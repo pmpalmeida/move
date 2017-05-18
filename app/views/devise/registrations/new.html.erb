@@ -1,3 +1,10 @@
+<div class="wrapper-devise">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <br>
+
+<div class="border-form-div">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,8 +16,9 @@
 
     <%= f.input :name, required: true, autofocus: true %>
 
-    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Mulher (Modelo)" %> </div>
     <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Homem" %> </div>
+    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Mulher (Modelo)" %> </div>
+    <br>
 
 
     <%= f.input :email, required: true, autofocus: true %>
@@ -24,3 +32,9 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+    </div>
+  </div>
+</div>
+</div>

@@ -1,19 +1,45 @@
 
-<div class="wrapper-grey">
+<div class="wrapper-devise">
 <div class="container">
 
 <!-- EDICAO DO PERFIL DE USUARIO -->
-<div class="thumbnail thumbstyle">
-  <div class="card card-block">
-    <h4 class="card-title text-center"><strong>Perfil</strong></h4>
-    <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
-    <div class="card-block">
-      <h4 class="card-title text-center"><strong><%= @user.name %></strong></h4>
-      <p class="card-text text-center"> <%= @user.email %></p>
-      <center><%= link_to "Editar", edit_user_registration_path, class: "btn btn-danger btn-block" %></center>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+
+    <div class="thumbnail thumbstyle">
+      <div class="card card-block">
+
+      <div class="flexshow">
+      <div>
+        <h4 class="card-title text-center"><strong>Perfil</strong></h4>
+        <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
+        <div class="card-block">
+          <h4 class="card-title text-center"><strong><%= @user.name %></strong></h4>
+          <p class="card-text text-center"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>  <%= @user.email %></p>
+          <hr/>
+          <h4 class="card-title text-center"><strong>Anuncio</strong></h4>
+          <p class="card-text text-center">Cidade(s): <%= @user.pprofile.city %></p>
+          <p class="card-text text-center">Bairro(s): Jardins </p>
+          <p class="card-text text-center"><i class="fa fa-phone-square fa-fw"></i> <%= @user.pprofile.phone_number %></p>
+
+        </div>
+      </div>
+        <div>
+
+        <%= link_to "Anunciar", edit_user_registration_path, class: "btn btn-danger btn-block btn-lg" %>
+        <br>
+        <%= link_to "Editar perfil", edit_user_registration_path%> <br>
+        <%= link_to "Editar anuncio", edit_user_registration_path%> <br>
+        <%= link_to "Visualizar anuncio", pprofile_path(@user.pprofile)%> <br>
+        <%= link_to "Excluir perfil", edit_user_registration_path%>
+        </div>
+      </div>
+
+      </div>
+      <br>
     </div>
+
   </div>
-  <br>
 </div>
 <!-- FIM: EDICAO DO PERFIL DE USUARIO -->
 

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if current_user == @user
       if !@user.pprofile.nil?
         @pprofile = @user.pprofile
-        @pprofile.city = @user.cities.first.name
+        # @pprofile.city = @user.cities.first.name
       else
         @pprofile = Pprofile.find(2)
       end
