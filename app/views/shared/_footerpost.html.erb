@@ -1,4 +1,9 @@
 
+
+
+
+
+<% if !current_user.nil?%>
 <% if current_user.pprofile == @pprofile%>
   <% if current_user.is_female %>
     <style>
@@ -18,11 +23,21 @@
     </style>
 
   <div class="navbar-post-local">
-  <i class="fa fa-home fa-2x pull-left" aria-hidden="true"></i>
-   <%= link_to "POST", edit_user_registration_path, class: "btn btn-danger btn-circle btn-lg", style: "font-size: 12px" %>
-   <i class="fa fa-user fa-2x pull-lef" aria-hidden="true"></i>
+  <%= link_to root_path do %>
+    <i class="fa fa-home fa-2x pull-left" aria-hidden="true"></i>
+  <% end %>
+
+  <%= link_to edit_user_registration_path do %>
+    <button type="button" class="btn btn-danger btn-circle btn-lg", style="font-size: 12px; width: 70px !important;"><i class="fa fa-camera" aria-hidden="true"></i> POST</button>
+  <% end %>
+
+  <%= link_to user_path(current_user) do %>
+  <i class="fa fa-user fa-2x pull-lef" aria-hidden="true"></i>
+  <% end %>
   </div>
 
   <%end%>
 <%end%>
+<%end%>
+
 

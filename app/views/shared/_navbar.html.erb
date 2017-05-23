@@ -27,6 +27,9 @@
     </div>
   <a class="navbar-wagon-item navbar-wagon-link">Sobre</a>
   <a class="navbar-wagon-item navbar-wagon-link">Assine</a>
+  <%= link_to edit_user_registration_path do %>
+    <button type="button" class="btn btn-danger btn-circle btn-lg", style="font-size: 12px; width: 70px !important;"><i class="fa fa-camera" aria-hidden="true"></i> POST</button>
+  <% end %>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>

@@ -22,6 +22,7 @@
             <p class="card-text text-center">Cidade(s): <%= @user.pprofile.city %></p>
             <p class="card-text text-center">Bairro(s): Jardins </p>
             <p class="card-text text-center"><i class="fa fa-phone-square fa-fw"></i> <%= @user.pprofile.phone_number %></p>
+            <p class="card-text text-center"><i class="fa fa-calendar" aria-hidden="true"></i> de 15/02/2015 ate 17/06/2017</p>
           <%end%>
 
         </div>
@@ -49,6 +50,7 @@
 <!-- FIM: EDICAO DO PERFIL DE USUARIO -->
 
 <% if current_user.is_female %>
+
 
 <!-- EDICAO DO PERFIL PUBLICO DO USUARIO -->
 <div class="thumbnail thumbstyle">
