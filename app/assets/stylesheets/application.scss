@@ -91,13 +91,10 @@
 // CAROUSEL FOR PPROFILE
 
 .img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner > .item > img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 50%;
 }
 
 /* ------------------- Carousel Styling ------------------- */
