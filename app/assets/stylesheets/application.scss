@@ -90,11 +90,16 @@
 
 // CAROUSEL FOR PPROFILE
 
+@media (min-width: 600px)
+{
+
 .img-responsive,
 .carousel-inner > .item > img {
   display: block;
-  width: 100%;
-  height: 65%;
+  width: 100vw;
+  height: 35vh;
+}
+
 }
 
 /* ------------------- Carousel Styling ------------------- */
