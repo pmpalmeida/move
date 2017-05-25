@@ -1,2 +1,131 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<style>
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 25px;
+
+}
+.mktp {
+  font-size: 20px;
+  font-weight: lighter;
+  color: black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+</style>
+
+
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('background.jpg');">
+  <div class="banner-content">
+  <br>
+  <br>
+    <%= image_tag("move-logo.png", height: 200, width: 300) %>
+    <h1 style="padding: 15px">Encontre as melhores MVs na sua cidade e perto de voce</h1>
+    <br>
+
+    <!-- DROPDOWN BEGIN -->
+    <div class="btn-group show-on-hover">
+      <button type="button" class="btn btn-primary btn-lg btn-round" data-toggle="dropdown">
+        <strong>Cidades</strong> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+
+        <% @cities.each do |city| %>
+        <li><%= link_to city.name, city_path(city) %></li>
+        <% end %>
+
+        <li class="divider"></li>
+        <li><%= link_to "Inscreva-se", new_user_registration_path %></li>
+      </ul>
+    </div>
+    <!-- DROP DOWN END-->
+
+<hr/>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-4">
+      <center>
+        <img src="http://placehold.it/140x140" alt="...">
+        <p>name pporfile</p>
+      </center>
+    </div>
+
+      <div class="col-xs-12 col-sm-4">
+      <center>
+        <img src="http://placehold.it/140x140" alt="...">
+        <p>name pporfile</p>
+      </center>
+    </div>
+
+      <div class="col-xs-12 col-sm-4">
+      <center>
+        <img src="http://placehold.it/140x140" alt="...">
+        <p>name pporfile</p>
+      </center>
+    </div>
+    </div>
+  </div>
+  <hr/>
+  <br>
+
+
+  </div>
+</div>
+
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-6">
+
+      <div style="margin-top: 50px;">
+        <center><%= link_to "Inscreva-se", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
+        <p class="mktp">Veja conteudo exclusivo postado diariamente</p>
+      </div>
+
+    </div>
+
+    <div class="col-xs-6">
+
+      <div style="margin-top: 50px;">
+        <center><%= link_to "Anuncie", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
+        <p class="mktp">Seja vista por milhares de pessoas na cidade que voce preferir</p>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
