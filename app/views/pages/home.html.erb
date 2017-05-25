@@ -15,11 +15,13 @@
   font-size: 25px;
 
 }
-.banner p {
+.mktp {
   font-size: 20px;
   font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+  color: black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 </style>
 
@@ -31,7 +33,7 @@
   <br>
   <br>
     <%= image_tag("move-logo.png", height: 200, width: 300) %>
-    <h1>Encontre as melhores MVs na sua cidade e perto de voce</h1>
+    <h1 style="padding: 15px">Encontre as melhores MVs na sua cidade e perto de voce</h1>
     <br>
 
     <!-- DROPDOWN BEGIN -->
@@ -77,28 +79,53 @@
         <p>name pporfile</p>
       </center>
     </div>
-
     </div>
   </div>
+  <hr/>
+  <br>
 
 
   </div>
 </div>
 
 
-  <br>
-  <br>
-  <br>
-  <br>
-
-   <br>
-  <br>
-  <br>
-  <br>
-
- <br>
-  <br>
-  <br>
-  <br>
 
 
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-6">
+
+      <div style="margin-top: 50px;">
+        <center><%= link_to "Inscreva-se", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
+        <p class="mktp">Veja conteudo exclusivo postado diariamente</p>
+      </div>
+
+    </div>
+
+    <div class="col-xs-6">
+
+      <div style="margin-top: 50px;">
+        <center><%= link_to "Anuncie", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
+        <p class="mktp">Seja vista por milhares de pessoas na cidade que voce preferir</p>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
