@@ -16,15 +16,39 @@
     <br>
 
 
-<div class="border-form-div">
+    <div class="border-form-div">
 
-<p style="margin-bottom: 4px"><strong>Perfil</strong></p>
-<hr style="margin-top: 4px" />
+    <!-- PERFIL -->
 
-<p style="margin-bottom: 4px"><strong>Anuncio</strong></p>
-<hr style="margin-top: 4px" />
 
-<div class="sep">Anuncio</div>
+
+    <p style="margin: 0px -15px"><strong>Perfil</strong></p>
+    <div class="sep"></div>
+    <br>
+
+      <div style="display: flex;">
+        <div margin-left: 50px>
+          <img align="left" src="http://lorempixel.com/120/120/people/9/" alt="Profile image example"/>
+        </div>
+        <div style="margin-left: 20px">
+          <p><%= @user.name %></p>
+          <p><%= @user.email %></p>
+          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
+        </div>
+      </div>
+        <br>
+
+
+    <!-- PERFIL FIM -->
+
+
+
+<!-- ANUNCIO -->
+<p style="margin: 0px -15px"><strong>Anuncio</strong></p>
+<div class="sep"></div>
+<br>
+
+<p><center>Preencha o anuncio e clique em anunciar para publica-lo</center></p>
 
 <%= simple_form_for [current_user.pprofile] do |f| %>
   <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
@@ -33,9 +57,35 @@
   <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
   <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
-  <%= f.submit "add a review", class: "btn btn-primary" %>
+  <p style="margin-bottom: 0px"><strong>Fotos do perfil</strong></p>
+  <hr style="margin-top: 0px" />
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+  <br>
+  <br>
+
+
+
+  <p style="margin-bottom: 0px"><strong>Medias Sociais</strong></p>
+  <hr style="margin-top: 0px" />
+  <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
+  <br>
+
+  <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Endereco do twiiter" %>
+  <%= f.input :name, placeholder: "Endereco do Instagram", :label => "Endereco do Instagram" %>
+  <%= f.input :site, placeholder: "Link para website", :label => "Link para website" %>
+  <%= f.input :forum, placeholder: "Link para forum", :label => "Link para forum" %>
+
+  <%= f.submit "Anunciar", class: "btn btn-danger" %>
 
 <% end %>
+
+<!-- ANUNCIO FIM -->
 
 </div>
 
