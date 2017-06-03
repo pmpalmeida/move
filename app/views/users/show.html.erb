@@ -1,5 +1,5 @@
 
-
+<div style="background-color: #941B0C">
 
 <style>
 
@@ -20,9 +20,9 @@
 
     <!-- PERFIL -->
 
-
-
-    <p style="margin: 0px -15px"><strong>Perfil</strong></p>
+    <div style="margin: 0px -25px; background: black; color: white">
+    <p style="padding: 5px"><strong>Perfil</strong></p>
+    </div>
     <div class="sep"></div>
     <br>
 
@@ -44,11 +44,16 @@
 
 
 <!-- ANUNCIO -->
-<p style="margin: 0px -15px"><strong>Anuncio</strong></p>
+ <div style="margin: 0px -25px; background: black; color: white">
+    <p style="padding: 5px"><strong>Anuncio</strong></p>
+    </div>
+    <div class="sep"></div>
+
+<p><center>Preencha o anuncio com suas informacoes e clique em salvar anuncio para publica-lo</center></p>
+
+<p style="margin: 0px -15px"><strong>Contato</strong></p>
 <div class="sep"></div>
 <br>
-
-<p><center>Preencha o anuncio e clique em anunciar para publica-lo</center></p>
 
 <%= simple_form_for [current_user.pprofile] do |f| %>
   <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
@@ -57,8 +62,10 @@
   <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
   <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
-  <p style="margin-bottom: 0px"><strong>Fotos do perfil</strong></p>
-  <hr style="margin-top: 0px" />
+<br>
+<p style="margin: 0px -15px"><strong>Fotos</strong></p>
+<div class="sep"></div>
+<br>
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
@@ -71,8 +78,10 @@
 
 
 
-  <p style="margin-bottom: 0px"><strong>Medias Sociais</strong></p>
-  <hr style="margin-top: 0px" />
+
+<p style="margin: 0px -15px"><strong>Medias sociais</strong></p>
+<div class="sep"></div>
+
   <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
   <br>
 
@@ -81,7 +90,7 @@
   <%= f.input :site, placeholder: "Link para website", :label => "Link para website" %>
   <%= f.input :forum, placeholder: "Link para forum", :label => "Link para forum" %>
 
-  <%= f.submit "Anunciar", class: "btn btn-danger" %>
+  <%= f.submit "Salvar anuncio", class: "btn btn-danger" %>
 
 <% end %>
 
@@ -91,6 +100,9 @@
 
     </div>
   </div>
+</div>
+
+<!-- wrapper fim -->
 </div>
 
 
