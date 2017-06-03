@@ -9,7 +9,11 @@ class UsersController < ApplicationController
         @pprofile = @user.pprofile
         # @pprofile.city = @user.cities.first.name
       else
-        @pprofile = Pprofile.find(2)
+        if @user.is_female
+          @pprofile = Pprofile.new
+          @pprofile.save
+          @user.pprofile = @pprofile
+        end
       end
     else
       redirect_to root_path
