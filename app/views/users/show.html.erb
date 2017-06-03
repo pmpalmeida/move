@@ -2,7 +2,6 @@
 <div style="background-color: #941B0C">
 
 <style>
-
   .sep {
     height: 1px;
     background: #e8e8e8;
@@ -11,95 +10,101 @@
 </style>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-    <br>
+<div class="row">
+<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+<br>
+<div class="border-form-div">
 
 
-    <div class="border-form-div">
+
 
     <!-- PERFIL -->
 
     <div style="margin: 0px -25px; background: black; color: white">
-    <p style="padding: 5px"><strong>Perfil</strong></p>
+      <p style="padding: 5px"><strong>Perfil</strong></p>
     </div>
     <div class="sep"></div>
     <br>
 
-      <div style="display: flex;">
-        <div margin-left: 50px>
-          <img align="left" src="http://lorempixel.com/120/120/people/9/" alt="Profile image example"/>
-        </div>
-        <div style="margin-left: 20px">
-          <p><%= @user.name %></p>
-          <p><%= @user.email %></p>
-          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
-        </div>
+    <div style="display: flex;">
+      <div margin-left: 50px>
+        <img align="left" src="http://lorempixel.com/120/120/people/9/" alt="Profile image example"/>
       </div>
-        <br>
-
+      <div style="margin-left: 20px">
+        <p><%= @user.name %></p>
+        <p><%= @user.email %></p>
+        <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
+      </div>
+    </div>
+    <br>
 
     <!-- PERFIL FIM -->
 
 
 
 <!-- ANUNCIO -->
- <div style="margin: 0px -25px; background: black; color: white">
-    <p style="padding: 5px"><strong>Anuncio</strong></p>
-    </div>
+<% if !current_user.pprofile.nil? %>
+
+<div style="margin: 0px -25px; background: black; color: white">
+<p style="padding: 5px"><strong>Anuncio</strong></p>
+</div>
+<div class="sep"></div>
+
+  <p><center>Preencha o anuncio com suas informacoes e clique em salvar anuncio para publica-lo</center></p>
+
+  <p style="margin: 0px -15px"><strong>Contato</strong></p>
+  <div class="sep"></div>
+  <br>
+
+  <%= simple_form_for [current_user.pprofile] do |f| %>
+    <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
+    <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
+    <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
+    <%= f.input :neighborhood, placeholder: "Bairro", :label => "Bairro"  %>
+    <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
+
+    <br>
+    <p style="margin: 0px -15px"><strong>Fotos</strong></p>
+    <div class="sep"></div>
+    <br>
+
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+
+    <br>
+    <br>
+
+
+
+
+    <p style="margin: 0px -15px"><strong>Medias sociais</strong></p>
     <div class="sep"></div>
 
-<p><center>Preencha o anuncio com suas informacoes e clique em salvar anuncio para publica-lo</center></p>
+    <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
+    <br>
 
-<p style="margin: 0px -15px"><strong>Contato</strong></p>
-<div class="sep"></div>
-<br>
+    <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Endereco do twiiter" %>
+    <%= f.input :instagram, placeholder: "Endereco do Instagram", :label => "Endereco do Instagram" %>
+    <%= f.input :site, placeholder: "Link para website", :label => "Link para website" %>
+    <%= f.input :forum, placeholder: "Link para forum", :label => "Link para forum" %>
 
-<%= simple_form_for [current_user.pprofile] do |f| %>
-  <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
-  <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
- <!-- COLOCAR O BAIRRO NO MODELO -->
-  <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
-  <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
+    <%= f.submit "Salvar anuncio", class: "btn btn-danger" %>
 
-<br>
-<p style="margin: 0px -15px"><strong>Fotos</strong></p>
-<div class="sep"></div>
-<br>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-  <br>
-  <br>
+  <% end %>
 
-
-
-
-<p style="margin: 0px -15px"><strong>Medias sociais</strong></p>
-<div class="sep"></div>
-
-  <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
-  <br>
-
-  <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Endereco do twiiter" %>
-  <%= f.input :name, placeholder: "Endereco do Instagram", :label => "Endereco do Instagram" %>
-  <%= f.input :site, placeholder: "Link para website", :label => "Link para website" %>
-  <%= f.input :forum, placeholder: "Link para forum", :label => "Link para forum" %>
-
-  <%= f.submit "Salvar anuncio", class: "btn btn-danger" %>
-
-<% end %>
-
+<%end%>
 <!-- ANUNCIO FIM -->
 
-</div>
 
-    </div>
-  </div>
+
+</div>
+</div>
+</div>
 </div>
 
 <!-- wrapper fim -->
@@ -270,54 +275,3 @@
 
 
 
-
-
-<h1>show de users / users controller</h1>
-
-<p>user</p>  <%= @user %>
-<p>user name</p>  <%= @user.name %>
-  <br>
-<p>user emal</p>  <%= @user.email %>
-  <br>
-<p>pprofile name</p>  <%= @pprofile.name %>
-  <br>
-<p>pprofile phone_number</p>  <%= @pprofile.phone_number %>
-  <br>
-<p>user name</p>  <%= @user.name %>
-  <% if @pprofile == nil %>
-    <p>public profile nao existe</p>
-<p>user name</p>    <%= @user.cities[0] %>
-  <% else %>
-<p>user name</p>    <%= @pprofile %>
-  <% end %>
-
-
-<br>
-<br>
-<p>user cities</p>
-<% @user.cities.each do |city| %>
-  <%= city.name %>
-<% end %>
-
-<br>
-<% city = City.first %>
-<% city.users.each do |user| %>
-  <%= user.name %>
-<% end %>
-
-
-
-<div class="line-separator"></div>
-
-<style >
-
-line-separator{
-
-background:#717171;
-
-border-bottom:1px solid #313030;
-
-height:1px;
-}
-
-</style>
