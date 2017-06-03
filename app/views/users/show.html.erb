@@ -1,4 +1,63 @@
 
+
+
+<style>
+
+  .sep {
+    height: 1px;
+    background: #e8e8e8;
+    margin: 0px -25px;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <br>
+
+
+<div class="border-form-div">
+
+<p style="margin-bottom: 4px"><strong>Perfil</strong></p>
+<hr style="margin-top: 4px" />
+
+<p style="margin-bottom: 4px"><strong>Anuncio</strong></p>
+<hr style="margin-top: 4px" />
+
+<div class="sep">Anuncio</div>
+
+<%= simple_form_for [current_user.pprofile] do |f| %>
+  <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
+  <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
+ <!-- COLOCAR O BAIRRO NO MODELO -->
+  <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
+  <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
+
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+
+<% end %>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr\>
 <div class="wrapper-devise">
 <div class="container">
 
@@ -48,6 +107,7 @@
   </div>
 </div>
 <!-- FIM: EDICAO DO PERFIL DE USUARIO -->
+
 
 <% if current_user.is_female %>
 
