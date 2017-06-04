@@ -54,7 +54,7 @@
     <!-- DROP DOWN END-->
 
 <hr/>
-
+<p>Novidades</p>
 <div class="container">
 
   <div class="row">
@@ -81,9 +81,16 @@
     </div>
     </div>
   </div>
+
+  <%if current_user.nil? %>
+    <br>
+    <br>
+    <p>Veja mais conteudo exclusivo, inscreva-se!</p>
+    <%= link_to "Inscreva-se", new_user_registration_path, class: "btn btn-lg btn-danger" %>
+  <%end%>
+
   <hr/>
   <br>
-
 
   </div>
 </div>

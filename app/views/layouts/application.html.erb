@@ -12,7 +12,14 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/footerpost' %>
+
+    <% if !current_user.nil? %>
+      <% if current_user.is_female %>
+        <% if !current_user.pprofile.nil? %>
+          <%= render 'shared/footer' %>
+        <%end%>
+      <% end %>
+    <% end %>
 
     <%= javascript_include_tag 'application' %>
   </body>
