@@ -1,0 +1,36 @@
+
+
+<style>
+
+.camera {
+  color: white; /* social icon color */
+}
+
+.footer {
+  position: fixed;
+  bottom: 30px;
+  left: 45%;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.paragraph {
+  color: white;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-size: 15px;
+}
+
+</style>
+
+
+<%= link_to root_path do %>
+<footer class="footer">
+  <div style="padding: 8px">
+    <center>
+    <i class="fa fa-camera fa-3x camera" aria-hidden="true"></i>
+    <strong><p class="paragraph">POST</p></strong>
+    </center>
+  </div>
+</footer>
+<% end %>
