@@ -1,0 +1,15 @@
+
+
+
+
+
+<% if !current_user.pprofile.city.nil? %>
+  <%= @city.name %>
+<% end %>
+
+
+<%= simple_form_for [current_user.pprofile] do |f| %>
+
+
+   <%= f.button  :submit , name: "option", value: "Assinar", class: "btn btn-danger"%>
+<% end %>
