@@ -1,15 +1,72 @@
+<div style="background-color: #941B0C">
+
+
+  <div class="container">
+  <br>
+  <div class="border-form-div">
+    <% if !current_user.pprofile.city.nil? %>
+      <h2>Cidade - <%= @city.name %></h2>
+    <% end %>
+
+    <p>Selecione o tempo de publicacao do anuncio na cidade <strong><%= @city.name %></strong>:</p>
+    <br>
+    <div class="row">
+
+      <div class="col-xs-4 col-sm-4">
+        <div>
+          <p>1 Semana</p>
+          <p>Rs 200</p>
+          <p>10% de desconto</p>
+          <%= link_to "Assinar", root_path, class: "btn btn-danger btn-block"%>
+        </div>
+      </div>
+
+      <div class="col-xs-4 col-sm-4">
+        <div border-form-div>
+          <p>1 Mes</p>
+          <p>rs 100</p>
+          <p>10% de desconto em relacao ao valor de 1 semana</p>
+          <%= link_to "Assinar", root_path, class: "btn btn-danger btn-block"%>
+        </div>
+      </div>
+
+      <div class="col-xs-4 col-sm-4">
+        <div border-form-div>
+          <p>6 meses</p>
+          <p>rs 100</p>
+          <p>10% de desconto em relacao ao valor de 1 semana</p>
+          <%= link_to "Assinar", root_path, class: "btn btn-danger btn-block"%>
+        </div>
+      </div>
+    <!-- ROW END -->
+    </div>
+
+  <br>
+  <hr/>
+  <center><p>Gostaria de postar o anuncio em outra cidade? EH simples, mude a cidade no seu anuncio e pronto! :)</p></center>
+  <center><%= link_to "Anunciar em outra cidade", user_path(current_user), class: "btn btn-danger"%></center>
+  <br>
+  <br>
+<!-- DIV <div class="border-form-div"> END -->
+
+<%= link_to "Voltar para o perfil", user_path(current_user)%>
+<br>
+<%= link_to "Ver anuncio", pprofile_path(current_user.pprofile)%>
+</div>
+  <!-- CONTAINER END -->
+  </div>
 
 
 
+<!-- BACKGROUND FIM -->
+</div>
 
-
-<% if !current_user.pprofile.city.nil? %>
-  <%= @city.name %>
-<% end %>
+<br>
+<br>
+<br>
+<br>
 
 
 <%= simple_form_for [current_user.pprofile] do |f| %>
-
-
    <%= f.button  :submit , name: "option", value: "Assinar", class: "btn btn-danger"%>
 <% end %>
