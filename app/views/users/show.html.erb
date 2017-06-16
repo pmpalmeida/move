@@ -33,6 +33,9 @@
       <div style="margin-left: 20px">
         <p><%= @user.name %></p>
         <p><%= @user.email %></p>
+        <% if !@user.photo.url(:thumb).nil? %>
+        <td><%= image_tag(@user.photo.url(:thumb)) %></td>
+        <% end %>
         <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
       </div>
     </div>

@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
 
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit({ roles: [:is_female] }, :email, :password, :password_confirmation, :name)
+      user_params.permit({ roles: [:is_female] }, :email, :password, :password_confirmation, :name, :photo, :photo_cache)
     end
+
+    #devise_parameter_sanitizer.permit(:account_update) do |user_params|
+    #  user_params.permit( :photo, :photo_cache)
+    #end
 
   end
 end
