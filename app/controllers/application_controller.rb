@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
       user_params.permit({ roles: [:is_female] }, :email, :password, :password_confirmation, :name, :photo, :photo_cache)
     end
 
+    #devise_parameter_sanitizer.permit(:account_update) do |user_params|
+    #  user_params.permit( :photo, :photo_cache)
+    #end
+
   end
 end
 
