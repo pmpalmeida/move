@@ -1,4 +1,4 @@
-class UserPhotoUploader < CarrierWave::Uploader::Base
+class PprofilePhotoUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick # <- Notice this
 
@@ -8,10 +8,6 @@ class UserPhotoUploader < CarrierWave::Uploader::Base
     resize_to_fill 400, 300
   end
 
-  version :thumb do
-    resize_to_fill 100, 100
-  end
 end
-
 
 
