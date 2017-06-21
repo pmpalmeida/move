@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614180053) do
+ActiveRecord::Schema.define(version: 20170619201216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "photo1"
+    t.string   "photo2"
+    t.string   "photo3"
+    t.string   "photo4"
+    t.string   "photo5"
+    t.string   "photo6"
+    t.string   "photo7"
+    t.boolean  "is_ready"
+    t.integer  "pprofile_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["pprofile_id"], name: "index_books_on_pprofile_id", using: :btree
+  end
 
   create_table "cities", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,12 +37,44 @@ ActiveRecord::Schema.define(version: 20170614180053) do
   end
 
   create_table "citypresences", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.integer  "city_id"
+    t.string   "name"
+    t.string   "neighborhood"
+    t.boolean  "is_paid"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "is_under_date_limit"
     t.index ["city_id"], name: "index_citypresences_on_city_id", using: :btree
     t.index ["user_id"], name: "index_citypresences_on_user_id", using: :btree
+  end
+
+  create_table "docs", force: :cascade do |t|
+    t.string   "photo_front"
+    t.string   "photo_back"
+    t.string   "photo1"
+    t.string   "photo2"
+    t.boolean  "is_ready"
+    t.integer  "pprofile_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["pprofile_id"], name: "index_docs_on_pprofile_id", using: :btree
+  end
+
+  create_table "pprofile_photos", force: :cascade do |t|
+    t.integer  "pprofile_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "photo1"
+    t.string   "photo2"
+    t.string   "photo3"
+    t.string   "photo4"
+    t.string   "photo5"
+    t.string   "photo6"
+    t.string   "photo7"
+    t.index ["pprofile_id"], name: "index_pprofile_photos_on_pprofile_id", using: :btree
   end
 
   create_table "pprofiles", force: :cascade do |t|
@@ -67,7 +114,10 @@ ActiveRecord::Schema.define(version: 20170614180053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "books", "pprofiles"
   add_foreign_key "citypresences", "cities"
   add_foreign_key "citypresences", "users"
+  add_foreign_key "docs", "pprofiles"
+  add_foreign_key "pprofile_photos", "pprofiles"
   add_foreign_key "pprofiles", "users"
 end
