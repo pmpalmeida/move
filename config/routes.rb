@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show ]
 
+  resources :books, only: [ :update]
+
   get 'payments', to: "payments#payview"
 
 

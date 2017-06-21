@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     if current_user == @user
       if !@user.pprofile.nil?
         @pprofile = @user.pprofile
+        @book = @pprofile.book
+        @doc = @pprofile.doc
         # @pprofile.city = @user.cities.first.name
       else
         @user.is_female = true
