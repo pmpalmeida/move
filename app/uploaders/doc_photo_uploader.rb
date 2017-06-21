@@ -4,9 +4,10 @@ class DocPhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog                    # <- and this
 
-  version :standard do
-    resize_to_fill 400, 300
+  version :thumb do
+    resize_to_fill 100, 100
   end
+
 
 
 end

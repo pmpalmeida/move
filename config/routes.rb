@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :books, only: [ :update]
 
-  get 'payments', to: "payments#payview"
+  resources :docs, only: [ :update]
+
+  #get 'payments', to: "payments#payview"
 
 
 
