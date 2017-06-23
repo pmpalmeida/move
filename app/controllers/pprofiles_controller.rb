@@ -7,7 +7,7 @@ class PprofilesController < ApplicationController
   def update
     @pprofile = Pprofile.find(params[:id])
     @pprofile.update(pprofile_params)
-    redirect_to payments_path
+    redirect_to payments_path(current_user)
   end
 
 end
