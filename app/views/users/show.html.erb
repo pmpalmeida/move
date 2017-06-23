@@ -61,7 +61,7 @@
   <div class="sep"></div>
   <br>
 
-  <%= simple_form_for [current_user.pprofile] do |f| %>
+  <%= simple_form_for [@pprofile, @book] do |f| %>
     <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
     <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
     <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
@@ -80,62 +80,6 @@
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
     <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-
-        <!-- FOTO-->
-
-  <%= simple_form_for(@book) do |f| %>
-  <%= f.input :photo1 %>
-  <%= f.input :photo1_cache, as: :hidden %>
-  <%= f.input :photo2 %>
-  <%= f.input :photo2_cache, as: :hidden %>
-  <%= f.input :photo3 %>
-  <%= f.input :photo3_cache, as: :hidden %>
-  <%= f.input :photo4 %>
-  <%= f.input :photo4_cache, as: :hidden %>
-  <%= f.input :photo5 %>
-  <%= f.input :photo5_cache, as: :hidden %>
-  <%= f.input :photo6 %>
-  <%= f.input :photo6_cache, as: :hidden %>
-  <%= f.input :photo7 %>
-  <%= f.input :photo7_cache, as: :hidden %>
-  <%= f.submit %>
-  <% end %>
-
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo1.url(:thumb)) %></td>
-<% end %>
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo2.url(:thumb)) %></td>
-<% end %>
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo3.url(:thumb)) %></td>
-<% end %>
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo4.url(:thumb)) %></td>
-<% end %>
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo5.url(:thumb)) %></td>
-<% end %>
-<% if !@book.photo1.url.nil? %>
- <td><%= image_tag(@book.photo6.url(:thumb)) %></td>
-<% end %>
-
-
-  <%= simple_form_for(@doc) do |f| %>
-  <%= f.input :photo_front %>
-  <%= f.input :photo_front_cache, as: :hidden %>
-  <%= f.input :photo_back %>
-  <%= f.input :photo_back_cache, as: :hidden %>
-  <%= f.submit %>
-  <% end %>
-
-<% if !@doc.photo_front.url.nil? %>
- <td><%= image_tag(@doc.photo_front.url(:thumb)) %></td>
-<% end %>
-<% if !@doc.photo_back.url.nil? %>
- <td><%= image_tag(@doc.photo_back.url(:thumb)) %></td>
-<% end %>
-    <!-- FOTO FIM -->
 
     <br>
     <br>
@@ -160,6 +104,45 @@
 
 <%end%>
 <!-- ANUNCIO FIM -->
+
+ <!-- FOTO-->
+
+  <%= simple_form_for(@book) do |f| %>
+  <%= f.input :photo1 %>
+  <%= f.input :photo1_cache, as: :hidden %>
+  <%= f.input :photo2 %>
+  <%= f.input :photo2_cache, as: :hidden %>
+  <%= f.input :photo3 %>
+  <%= f.input :photo3_cache, as: :hidden %>
+  <%= f.input :photo4 %>
+  <%= f.input :photo4_cache, as: :hidden %>
+  <%= f.input :photo5 %>
+  <%= f.input :photo5_cache, as: :hidden %>
+  <%= f.input :photo6 %>
+  <%= f.input :photo6_cache, as: :hidden %>
+  <%= f.input :photo7 %>
+  <%= f.input :photo7_cache, as: :hidden %>
+  <%= f.submit %>
+  <% end %>
+
+
+
+
+  <%= simple_form_for(@doc) do |f| %>
+  <%= f.input :photo_front %>
+  <%= f.input :photo_front_cache, as: :hidden %>
+  <%= f.input :photo_back %>
+  <%= f.input :photo_back_cache, as: :hidden %>
+  <%= f.submit %>
+  <% end %>
+
+<% if !@doc.photo_front.url.nil? %>
+ <td><%= image_tag(@doc.photo_front.url(:thumb)) %></td>
+<% end %>
+<% if !@doc.photo_back.url.nil? %>
+ <td><%= image_tag(@doc.photo_back.url(:thumb)) %></td>
+<% end %>
+    <!-- FOTO FIM -->
 
 
 
