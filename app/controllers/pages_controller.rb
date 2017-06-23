@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
 
     @cities = City.all
+    @photo = Book.last
 
   end
 

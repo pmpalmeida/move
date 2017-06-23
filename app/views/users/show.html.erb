@@ -28,14 +28,13 @@
 
     <div style="display: flex;">
       <div margin-left: 50px>
-        <img align="left" src="http://lorempixel.com/100/100/people/9/" alt="Profile image example"/>
+       <% if !@user.photo.url(:thumb).nil? %>
+        <td><%= image_tag(@user.photo.url(:thumb)) %></td>
+        <% end %>
       </div>
       <div style="margin-left: 20px">
         <p><%= @user.name %></p>
         <p><%= @user.email %></p>
-        <% if !@user.photo.url(:thumb).nil? %>
-        <td><%= image_tag(@user.photo.url(:thumb)) %></td>
-        <% end %>
         <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
       </div>
     </div>
@@ -68,22 +67,6 @@
     <%= f.input :neighborhood, placeholder: "Bairro", :label => "Bairro"  %>
     <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
-    <br>
-    <p style="margin: 0px -15px"><strong>Fotos</strong></p>
-    <div class="sep"></div>
-    <br>
-
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-
-    <br>
-    <br>
-
 
 
 
@@ -93,12 +76,12 @@
     <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
     <br>
 
-    <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Endereco do twiiter" %>
-    <%= f.input :instagram, placeholder: "Endereco do Instagram", :label => "Endereco do Instagram" %>
-    <%= f.input :site, placeholder: "Link para website", :label => "Link para website" %>
-    <%= f.input :forum, placeholder: "Link para forum", :label => "Link para forum" %>
+    <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Twiiter" %>
+    <%= f.input :instagram, placeholder: "Endereco do Instagram", :label => "Instagram" %>
+    <%= f.input :site, placeholder: "Link para website", :label => "Website" %>
+    <%= f.input :forum, placeholder: "Link para forum", :label => "Forum" %>
 
-    <%= f.submit "Salvar anuncio", class: "btn btn-danger" %>
+    <%= f.submit "Salvar informacoes do anuncio", class: "btn btn-danger" %>
 
   <% end %>
 
@@ -106,6 +89,22 @@
 <!-- ANUNCIO FIM -->
 
  <!-- FOTO-->
+
+   <br>
+    <p style="margin: 0px -15px"><strong>Book com fotos</strong></p>
+    <div class="sep"></div>
+    <br>
+
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
+
+    <br>
+    <br>
 
   <%= simple_form_for(@book) do |f| %>
   <%= f.input :photo1 %>
@@ -126,7 +125,10 @@
   <% end %>
 
 
-
+<br>
+<br>
+<br>
+<br>
 
   <%= simple_form_for(@doc) do |f| %>
   <%= f.input :photo_front %>
