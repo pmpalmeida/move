@@ -5,11 +5,17 @@ Rails.application.routes.draw do
 
 
   resources :cities, only: [ :show ]
+
+
   resources :pprofiles, only: [ :update, :destroy, :show ]
+
+
+  resources :books, only: [ :update]
+
 
   resources :users, only: [ :show ]
 
-  resources :books, only: [ :update]
+
 
   resources :docs, only: [ :update]
 

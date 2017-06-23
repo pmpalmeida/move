@@ -61,7 +61,7 @@
   <div class="sep"></div>
   <br>
 
-  <%= simple_form_for [@pprofile, @book] do |f| %>
+  <%= simple_form_for [@pprofile] do |f| %>
     <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
     <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
     <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
