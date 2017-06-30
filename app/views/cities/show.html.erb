@@ -2,22 +2,84 @@
 
 .banner {
   color: white;
-  position: absolute;
+  position: static;
   text-align: center;
   background-size: cover !important;
   background-image: linear-gradient(-225deg, #B23A48 0%, #941B0C 50%);
 }
 </style>
 
-<div class="banner" style="">
+<div class="banner">
 
-<h1 style="font-size: 25px; margin: 15px; font-family: 'Playball', cursive;"><strong>
-# <%= @city.name %> #</strong></h1>
+<br>
+<strong><%= @city.name %></strong>
+<br>
+<br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
 
 <!-- CAROUSEL BEGINING **************************8888-->
-    <div id="public_profile" class="carousel slide" data-ride="carousel">
+    <div id="public_profile" class="carousel slide" data-ride="carousel" class="hide">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -32,25 +94,40 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-         <img src="http://placehold.it/1000x500" alt="...">
+         <img src="http://placehold.it/600x400" alt="...">
+        </div>
+
+        <div class="item">
+
+            <a href="http://www.google.com">
+
+        <div class="flexpost" style="margin-bottom: -50px; background-color: white">
+          <img align="left" class="card-img-top img-circle" style="margin: 10px; z-index: 4" src="http://lorempixel.com/40/40/people/9/">
+        <div>
+          <h3 class="headerpost" align="left" style="z-index: 3">ssssss</h3>
+          <h3 class="headerpost" style="z-index: 2"><i class="fa fa-phone-square"></i> ssss  - ssss  (Jardins)</h3>
+        </div>
+        </div>
+            </a>
+
+              <td style="z-index: 1"><%= image_tag(User.find(18).photo) %></td>
+
+
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
       </div>
 
@@ -58,7 +135,7 @@
       <a class="left carousel-control" href="#public_profile" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <a class="right carousel-control" href="#public_profile" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
   </div>
