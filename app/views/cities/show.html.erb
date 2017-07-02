@@ -130,9 +130,28 @@
           <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/600x400" alt="...">
+                <a href="http://www.google.com"">
+
+            <div class="container" style="max-width: 600px;  padding:0;">
+              <div  style="background-color: black; z-index: 5; position: relative;">
+                <h3 class="pull-right headerpost">15/05/1990</h3>
+                <div class="flexpost">
+                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
+                  <div>
+                    <h3 class="headerpost" align="left">Joana</h3>
+                    <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
+            </div>
+
+          </a>
         </div>
 
+
+
+        <!-- ITEM BEGINING -->
         <div class="item">
 
           <a href="http://www.google.com"">
@@ -154,6 +173,10 @@
           </a>
 
         </div>
+        <!-- ITEM ENDING -->
+
+
+
       </div>
 
       <!-- Controls -->
