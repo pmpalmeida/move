@@ -80,18 +80,23 @@
 
 
 
-  <!-- PROFILE BEGINING -->
-  <img align="left" class="fb-image-profile thumbnail" style="position: relative;" src="http://lorempixel.com/180/180/people/9/"/>
+
+
+    <!-- PROFILE BEGINING -->
+  <div class="container">
+  <img align="left" class="thumbnail" style="width: 20%; z-index: 100; position: relative; margin-top: -40px; margin-right: 10px" src="http://lorempixel.com/130/130/people/9/"/>
 
   <div class="fb-profile-text">
     <h1><%= @pprofile.name %></h1>
     <h2><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
   </div>
+  </div>
   <!-- PROFILE END -->
-</div>
 
+</div>
 <br>
-<br>
+
+
 
 <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
 <center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
@@ -99,7 +104,7 @@
 <center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
 <br>
 
-<div style="background-color: #941B0C">
+<div style="background-color: black">
 <!-- POSTS BEGINING -->
 <!-- BOOTSTRAP GRID BEGINING -->
 <br>
