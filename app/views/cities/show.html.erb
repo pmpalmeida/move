@@ -2,22 +2,84 @@
 
 .banner {
   color: white;
-  position: absolute;
+  position: static;
   text-align: center;
   background-size: cover !important;
   background-image: linear-gradient(-225deg, #B23A48 0%, #941B0C 50%);
 }
 </style>
 
-<div class="banner" style="">
+<div class="banner">
 
-<h1 style="font-size: 25px; margin: 15px; font-family: 'Playball', cursive;"><strong>
-# <%= @city.name %> #</strong></h1>
+<br>
+<strong><%= @city.name %></strong>
+<br>
+<br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
 
 <!-- CAROUSEL BEGINING **************************8888-->
-    <div id="public_profile" class="carousel slide" data-ride="carousel">
+    <div id="public_profile" class="carousel slide" data-ride="carousel" class="hide">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -32,33 +94,96 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-         <img src="http://placehold.it/1000x500" alt="...">
+         <img src="http://placehold.it/600x400" alt="...">
+        </div>
+
+        <div class="item">
+
+          <a href="http://www.google.com">
+
+            <div class="container">
+            <div style="display: flex; align-items: center; margin-bottom:-50px">
+              <img align="left" class="card-img-top img-circle" style="margin: 5px; z-index: 4" src="http://lorempixel.com/40/40/people/9/">
+              <div>
+                <p class="headerpost" align="left" style="z-index: 4">ssssss</p>
+                <p class="headerpost" align="left" style="z-index: 4"><i class="fa fa-phone-square"></i> ssss  - ssss  (Jardins)</p>
+              </div>
+            </div>
+
+            </div>
+            <br>
+
+            <%= image_tag(User.find(18).photo, style: "margin: auto;") %>
+
+
+          </a>
+
+        </div>
+
+        <div class="item">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+                <a href="http://www.google.com"">
+
+            <div class="container" style="max-width: 600px;  padding:0;">
+              <div  style="background-color: black; z-index: 5; position: relative;">
+                <h3 class="pull-right headerpost">15/05/1990</h3>
+                <div class="flexpost">
+                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
+                  <div>
+                    <h3 class="headerpost" align="left">Joana</h3>
+                    <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
+            </div>
+
+          </a>
         </div>
+
+
+
+        <!-- ITEM BEGINING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+
+          <a href="http://www.google.com"">
+
+            <div class="container" style="max-width: 600px;  padding:0;">
+              <div  style="background-color: black; z-index: 5; position: relative;">
+                <h3 class="pull-right headerpost">15/05/1990</h3>
+                <div class="flexpost">
+                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
+                  <div>
+                    <h3 class="headerpost" align="left">Joana</h3>
+                    <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
+            </div>
+
+          </a>
+
         </div>
-        <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
-        </div>
+        <!-- ITEM ENDING -->
+
+
+
       </div>
 
       <!-- Controls -->
       <a class="left carousel-control" href="#public_profile" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <a class="right carousel-control" href="#public_profile" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
   </div>
@@ -73,70 +198,70 @@
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
       <center>
-        <img src="http://placehold.it/140x140" alt="...">
+        <img src="http://placehold.it/160x160" alt="...">
         <p>name pporfile</p>
       </center>
     </div>
