@@ -99,56 +99,59 @@
 
         <div class="item">
 
-            <a href="http://www.google.com">
-
-        <div class="flexpost" style="margin-bottom: -50px; background-color: white">
-          <img align="left" class="card-img-top img-circle" style="margin: 10px; z-index: 4" src="http://lorempixel.com/40/40/people/9/">
-        <div>
-          <h3 class="headerpost" align="left" style="z-index: 3">ssssss</h3>
-          <h3 class="headerpost" style="z-index: 2"><i class="fa fa-phone-square"></i> ssss  - ssss  (Jardins)</h3>
-        </div>
-        </div>
-            </a>
-
-              <td style="z-index: 1"><%= image_tag(User.find(18).photo) %></td>
-
-
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/600x400" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/600x400" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/600x400" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/600x400" alt="...">
-        </div>
-
-        <div class="item">
           <a href="http://www.google.com">
 
-      <div class="container" style="max-width: 600px">
+            <div class="container">
+            <div style="display: flex; align-items: center; margin-bottom:-50px">
+              <img align="left" class="card-img-top img-circle" style="margin: 5px; z-index: 4" src="http://lorempixel.com/40/40/people/9/">
+              <div>
+                <p class="headerpost" align="left" style="z-index: 4">ssssss</p>
+                <p class="headerpost" align="left" style="z-index: 4"><i class="fa fa-phone-square"></i> ssss  - ssss  (Jardins)</p>
+              </div>
+            </div>
 
-        <h3 class="pull-right headerpost">15/05/1990</h3>
+            </div>
+            <br>
 
-        <div class="flexpost" style="background-color: black">
-          <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/40/40/people/9/" alt="Profile image example"/>
-        <div>
-          <h3 class="headerpost" align="left">jOANA</h3>
-          <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - sAO pAULO (Jardins)</h3>
+            <%= image_tag(User.find(18).photo, style: "margin: auto;") %>
+
+
+          </a>
+
         </div>
+
+        <div class="item">
+          <img src="http://placehold.it/600x400" alt="...">
         </div>
-          <td style="z-index: 1; margin-top: -10px"><%= image_tag(User.find(18).photo) %></td>
+        <div class="item">
+          <img src="http://placehold.it/600x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/600x400" alt="...">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/600x400" alt="...">
+        </div>
 
+        <div class="item">
 
-      </div>
+          <a href="http://www.google.com"">
 
+            <div class="container" style="max-width: 600px;  padding:0;">
+              <div  style="background-color: black; z-index: 5; position: relative;">
+                <h3 class="pull-right headerpost">15/05/1990</h3>
+                <div class="flexpost">
+                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
+                  <div>
+                    <h3 class="headerpost" align="left">Joana</h3>
+                    <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
+            </div>
 
-            </a>
-
+          </a>
 
         </div>
       </div>
