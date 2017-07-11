@@ -14,35 +14,65 @@
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">
+      <div class="carousel-inner" style="background-color: black">
+
+         <!-- ITEM BEGINNING -->
         <div class="item active">
-          <img src="http://placehold.it/1000x1000" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+         <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="https://secure.img1-fg.wfcdn.com/lf/maxsquare/hash/40661/39349020/1/Wallums-Wall-Decor-Old-Bay-Bridge-San-Francisco-8-x-144-3-Piece-Wall-Mural.jpg" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+         <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+         <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+         <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+         <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+        <!-- ITEM BEGINNING -->
         <div class="item">
-          <img src="http://placehold.it/1000x500" alt="...">
+          <div class="container" style="max-width: 600px;  padding: 0px;">
+            <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
+          </div>
         </div>
+        <!-- ITEM ENDING -->
+
       </div>
 
       <!-- Controls -->
       <a class="left carousel-control" href="#public_profile" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <a class="right carousel-control" href="#public_profile" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
   </div>
@@ -50,31 +80,34 @@
 
 
 
-  <!-- PROFILE BEGINING -->
-  <img align="left" class="fb-image-profile thumbnail" style="position: relative;" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+
+
+    <!-- PROFILE BEGINING -->
+  <div class="container">
+  <img align="left" class="thumbnail" style="width: 20%; z-index: 100; position: relative; margin-top: -40px; margin-right: 10px" src="http://lorempixel.com/130/130/people/9/"/>
 
   <div class="fb-profile-text">
     <h1><%= @pprofile.name %></h1>
     <h2><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
   </div>
+  </div>
   <!-- PROFILE END -->
-</div>
 
+</div>
 <br>
-<br>
+
+
 
 <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
 <center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
 <center><small><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></small></center>
 <center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
+<br>
 
-
-<hr/>
-
-
+<div style="background-color: black">
 <!-- POSTS BEGINING -->
 <!-- BOOTSTRAP GRID BEGINING -->
-
+<br>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-3 col-sm-6">
@@ -194,17 +227,6 @@
     </div>
   </div>
 </div>
-
+</div>
 <!-- BOOTSTRAP GRID ENDING -->
 <!-- POSTS ENDING -->
-
-
-<h1>show pprofile</h1>
-<p> Nome: <%= @pprofile.name %> </p>
-<p> Telefone <%= @pprofile.phone_number %> </p>
-<p> Cidade: <%= @pprofile.city %> </p>
-<p> Bairro <%= @pprofile %> </p>
-<p> Twitter <%= @pprofile.twitter %> </p>
-<p> Instagram <%= @pprofile.instagram %> </p>
-<p> Forum <%= @pprofile.forum %> </p>
-<p> Descricao <%= @pprofile.description %> </p>
