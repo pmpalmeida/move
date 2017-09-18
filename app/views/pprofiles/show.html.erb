@@ -1,9 +1,12 @@
-<div class="fb-profile">
+<div class="fb-profile" style="background-color: black">
+
+<div  style="max-width: 800px; margin:0px auto !important;">
 
   <!-- CAROUSEL BEGINING **************************8888-->
     <div id="public_profile" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" style="position: absolute;
+    bottom: 10px; left: 50%">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
@@ -18,49 +21,49 @@
 
          <!-- ITEM BEGINNING -->
         <div class="item active">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px; padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
         <!-- ITEM ENDING -->
         <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 600px;  padding: 0px;">
+          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
             <%= image_tag User.last.photo, style: "width: 100%; object-fit: contain; z-index: 1;" %>
           </div>
         </div>
@@ -69,12 +72,14 @@
       </div>
 
       <!-- Controls -->
+
       <a class="left carousel-control" href="#public_profile" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
       <a class="right carousel-control" href="#public_profile" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
+
   </div>
   <!-- CAROUSEL END ************************************-->
 
@@ -83,26 +88,49 @@
 
 
     <!-- PROFILE BEGINING -->
-  <div class="container">
-  <img align="left" class="thumbnail" style="width: 20%; z-index: 100; position: relative; margin-top: -40px; margin-right: 10px" src="http://lorempixel.com/130/130/people/9/"/>
+  <div class="container" style="max-width: 800px; margin:0px auto !important; background-color: white">
 
-  <div class="fb-profile-text">
-    <h1><%= @pprofile.name %></h1>
-    <h2><i class="fa fa-phone-square"></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
-  </div>
+    <!-- IMG PROFILE -->
+    <img align="left" class="thumbnail" style="z-index: 100; position: relative; margin-top: -40px; margin-right: 10px; height: 100vh; max-height:130px;" src="http://lorempixel.com/100/100/people/9/"/>
+    <!-- IMG PROFILE END -->
+
+    <!-- CONTACT PROFILE -->
+    <div style="margin: 0px -25px; background-color: black"> <p style="padding: 2px"></div>
+
+    <div>
+      <h1><%= @pprofile.name %></h1>
+      <h2></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+    </div>
+    <!-- CONTACT PROFILE END -->
+
+
+    <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> <%= @pprofile.description %>" </p></center>
+
+
+<center><i class="fa fa-instagram fa-fw fa-2x"></i>
+<i class="fa fa-twitter fa-fw fa-2x"></i>
+<i class="fa fa-external-link fa-fw fa-2x"></i>
+<i class="fa fa-list fa-fw fa-2x"></i></center>
+
+
+<br>
+<br>
+<center><small><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></small></center>
+<center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
+<br>
+
+
   </div>
   <!-- PROFILE END -->
 
 </div>
-<br>
+<!-- div para o carousel -->
+</div>
 
 
 
-<center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> "Descricao <%= @pprofile.description %>" </p></center>
-<center><i class="fa fa-instagram fa-fw fa-2x"></i> <i class="fa fa-twitter fa-fw fa-2x"></i></center>
-<center><small><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></small></center>
-<center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
-<br>
+
+
 
 <div style="background-color: black">
 <!-- POSTS BEGINING -->
