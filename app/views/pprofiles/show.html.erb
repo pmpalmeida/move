@@ -91,33 +91,50 @@
   <div class="container" style="max-width: 800px; margin:0px auto !important; background-color: white">
 
     <!-- IMG PROFILE -->
-    <img align="left" class="thumbnail" style="z-index: 100; position: relative; margin-top: -40px; margin-right: 10px; height: 100vh; max-height:130px;" src="http://lorempixel.com/100/100/people/9/"/>
+    <img align="left" class="thumbnail" style="z-index: 100; position: relative; margin-top: -40px; margin-right: 10px; height: 100vh; max-height:130px;" src="http://lorempixel.com/90/90/people/9/"/>
     <!-- IMG PROFILE END -->
 
     <!-- CONTACT PROFILE -->
     <div style="margin: 0px -25px; background-color: black"> <p style="padding: 2px"></div>
 
-    <div>
-      <h1><%= @pprofile.name %></h1>
-      <h2></i> <%= @pprofile.phone_number.to_s%>  - <%=@pprofile.city%> (Jardins)</h2>
+    <div style="margin-top: -10px">
+      <h1 style="font-size: 4vh; font-style: bold; margin-bottom:-10px"><%= @pprofile.name %></h1>
+      <h2 style="font-size: 2vh; margin-bottom:-10px"><i class="fa fa-phone-square fa-fw fa-1x"></i><%= @pprofile.phone_number.to_s%> - <%=@pprofile.city%> - <%=@pprofile.neighborhood%></h2>
     </div>
     <!-- CONTACT PROFILE END -->
 
+    <br>
+    <br>
+    <br>
+    <center><p  style="font-style: italic;"> <%= @pprofile.description %>" </p></center>
+    <br>
 
-    <center class="fb-profile-text"><p class="pmargin0" style="font-style: italic; margin-bottom: 10px"> <%= @pprofile.description %>" </p></center>
 
+<div style="float:right;">
 
-<center><i class="fa fa-instagram fa-fw fa-2x"></i>
-<i class="fa fa-twitter fa-fw fa-2x"></i>
-<i class="fa fa-external-link fa-fw fa-2x"></i>
-<i class="fa fa-list fa-fw fa-2x"></i></center>
+  <%= link_to @pprofile.instagram do %>
+    <i class="fa fa-instagram fa-fw fa-2x"></i>
+  <% end %>
 
+  <%= link_to @pprofile.twitter do %>
+    <i class="fa fa-twitter fa-fw fa-2x"></i>
+  <% end %>
+
+  <%= link_to @pprofile.site do %>
+    <i class="fa fa-external-link fa-fw fa-2x"></i>
+  <% end %>
+
+  <%= link_to @pprofile.forum do %>
+    <i class="fa fa-list fa-fw fa-2x"></i>
+  <% end %>
 
 <br>
 <br>
-<center><small><a class="card-text pmargin0">Website: <%= @pprofile.site %></a></small></center>
-<center><small><a class="card-text pmargin0">Forum: <%= @pprofile.forum %></a></small></center>
 <br>
+</div>
+
+
+
 
 
   </div>
