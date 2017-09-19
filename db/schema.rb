@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619201216) do
+ActiveRecord::Schema.define(version: 20170711021239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,17 +79,25 @@ ActiveRecord::Schema.define(version: 20170619201216) do
 
   create_table "pprofiles", force: :cascade do |t|
     t.string   "name"
-    t.integer  "phone_number"
     t.string   "city"
     t.string   "site"
     t.string   "instagram"
     t.string   "twitter"
     t.string   "forum"
-    t.string   "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                                                                                                                                                              null: false
+    t.datetime "updated_at",                                                                                                                                                              null: false
     t.integer  "user_id"
     t.string   "neighborhood"
+    t.string   "phone_number"
+    t.text     "description"
+    t.string   "photo_profile", default: "http://s4.storage.akamai.coub.com/get/b30/p/coub/simple/cw_timeline_pic/f41ea52c56a/40e3a11a1224c3423d307/med_1409617522_1382490910_image.jpg"
+    t.string   "photo1",        default: "http://s4.storage.akamai.coub.com/get/b30/p/coub/simple/cw_timeline_pic/f41ea52c56a/40e3a11a1224c3423d307/med_1409617522_1382490910_image.jpg"
+    t.string   "photo2"
+    t.string   "photo3"
+    t.string   "photo4"
+    t.string   "photo5"
+    t.string   "photo6"
+    t.string   "photo7"
     t.index ["user_id"], name: "index_pprofiles_on_user_id", using: :btree
   end
 
