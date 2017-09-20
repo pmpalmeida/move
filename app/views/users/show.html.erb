@@ -11,6 +11,8 @@
   .separation1 {
     margin-top: -10px;
     margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     background-color: black;
     padding: 1px;
   }
@@ -19,22 +21,28 @@
 <!-- PERFIL -->
 <div class="spacenavbar"></div>
 
-<div class="container" style="background-color: white">
+<div class="container">
+  <div class="row" style="margin-top: 1px">
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
 
-  <p style="margin-top: 10px; padding: 5px"><strong>Perfil de usuario:</strong></p>
+    <div style="background-color: white">
+      <p style="padding: 10px; margin-bottom: -10px"><strong>Perfil de usuario:</strong></p>
 
-  <div class="separation1"></div>
+      <div class="separation1"></div>
 
-  <center>
-    <% if !@user.photo.url(:thumb).nil? %>
-      <td><%= image_tag(@user.photo.url(:thumb)) %></td>
-    <% end %>
-    <h3><%= @user.name %></h3>
-    <h4><%= @user.email %></h4>
-    <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger"%>
-  </center>
-  <br>
+      <center>
+        <% if !@user.photo.url(:thumb).nil? %>
+          <td><%= image_tag(@user.photo.url(:thumb)) %></td>
+        <% end %>
+        <h3><%= @user.name %></h3>
+        <h4><%= @user.email %></h4>
+        <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger"%>
+      </center>
+      <br>
+    </div>
 
+  </div>
+  </div>
 </div>
 <br>
 <!-- PERFIL FIM -->
@@ -95,20 +103,20 @@
 
   <center><%= f.input :photo1, :label => "Foto 1", input_html: { class: 'btn-danger' } %></center>
   <%= f.input :photo1_cache, as: :hidden %>
-    <center><%= image_tag(@pprofile.photo1.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo1.url(:small)) %></center>
   <hr/>
 
   <%= f.input :photo2, :label => "Foto 2", class: "btn-danger" %>
   <%= f.input :photo2_cache, as: :hidden %>
   <% if !@pprofile.photo2.url.nil? %>
-    <center><%= image_tag(@pprofile.photo2.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo2.url(:small)) %></center>
   <% end %>
   <hr/>
 
   <%= f.input :photo3, :label => "Foto 3", prompt: "Select your age" %>
   <%= f.input :photo3_cache, as: :hidden %>
   <% if !@pprofile.photo3.url.nil? %>
-    <center><%= image_tag(@pprofile.photo3.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo3.url(:small)) %></center>
   <% end %>
   <hr/>
 
