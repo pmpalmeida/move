@@ -60,11 +60,12 @@
   <div class="sep"></div>
   <br>
 
-  <%= simple_form_for [@pprofile] do |f| %>
+  <%= simple_form_for [@pprofile], defaults: { input_html: { class: 'default_class' } }  do |f| %>
     <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
     <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
-    <%= f.input :city, placeholder: "Cidade para o anuncio", :collection => City.all, :label => "Cidade do anuncio"  %>
-    <%= f.input :neighborhood, placeholder: "Bairro", :label => "Bairro"  %>
+
+
+
     <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
 
@@ -75,32 +76,30 @@
     <div class="sep"></div>
   <br>
 
-  <%= f.input :photo1, :label => "Foto 1" %>
+  <center><%= f.input :photo1, :label => "Foto 1", input_html: { class: 'btn-danger' } %></center>
   <%= f.input :photo1_cache, as: :hidden %>
-  <% if !@pprofile.photo1.url.nil? %>
-    <center><%= image_tag(@pprofile.photo1.url(:small)) %></center>
-  <% end %>
+    <center><%= image_tag(@pprofile.photo1.url(:standard)) %></center>
   <hr/>
 
-  <%= f.input :photo2, :label => "Foto 2" %>
+  <%= f.input :photo2, :label => "Foto 2", class: "btn-danger" %>
   <%= f.input :photo2_cache, as: :hidden %>
   <% if !@pprofile.photo2.url.nil? %>
-    <center><%= image_tag(@pprofile.photo2.url(:small)) %></center>
+    <center><%= image_tag(@pprofile.photo2.url(:standard)) %></center>
   <% end %>
   <hr/>
 
-  <%= f.input :photo3, :label => "Foto 3" %>
+  <%= f.input :photo3, :label => "Foto 3", prompt: "Select your age" %>
   <%= f.input :photo3_cache, as: :hidden %>
   <% if !@pprofile.photo3.url.nil? %>
-    <center><%= image_tag(@pprofile.photo3.url(:small)) %></center>
+    <center><%= image_tag(@pprofile.photo3.url(:standard)) %></center>
   <% end %>
   <hr/>
 
   <%= f.input :photo4, :label => "Foto 4" %>
   <%= f.input :photo4_cache, as: :hidden %>
-  <% if !@pprofile.photo4.url.nil? %>
+
     <center><%= image_tag(@pprofile.photo4.url(:small)) %></center>
-  <% end %>
+
   <hr/>
 
   <%= f.input :photo5, :label => "Foto 5" %>
@@ -133,273 +132,19 @@
     <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
     <br>
 
-    <%= f.input :twitter, placeholder: "Endereco do Twiiter", :label => "Twiiter" %>
+    <%= f.input :twitter, as: :url, placeholder: "Endereco do Twiiter", :label => "Twiiter"%>
     <%= f.input :instagram, placeholder: "Endereco do Instagram", :label => "Instagram" %>
     <%= f.input :site, placeholder: "Link para website", :label => "Website" %>
     <%= f.input :forum, placeholder: "Link para forum", :label => "Forum" %>
 
-    <%= f.submit "Salvar informacoes do anuncio", class: "btn btn-danger" %>
+   <%= f.submit "Salvar informacoes do anuncio", class: "btn btn-danger" %>
 
 
 
   <% end %>
 
   <br>
-  <br>
-  <td><%= image_tag(@pprofile.photo1.url(:standard)) %></td>
-  <td><%= image_tag(@pprofile.photo_profile)%></td>
 
 <%end%>
 <!-- ANUNCIO FIM -->
-
- <!-- FOTO-->
-
-   <br>
-    <p style="margin: 0px -15px"><strong>Book com fotos</strong></p>
-    <div class="sep"></div>
-    <br>
-
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-    <img align="center" src="http://placehold.it/50x50" alt="Profile image example"/>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-
-  <%= simple_form_for(@book) do |f| %>
-  <%= f.input :photo1 %>
-  <%= f.input :photo1_cache, as: :hidden %>
-  <%= f.input :photo2 %>
-  <%= f.input :photo2_cache, as: :hidden %>
-  <%= f.input :photo3 %>
-  <%= f.input :photo3_cache, as: :hidden %>
-  <%= f.input :photo4 %>
-  <%= f.input :photo4_cache, as: :hidden %>
-  <%= f.input :photo5 %>
-  <%= f.input :photo5_cache, as: :hidden %>
-  <%= f.input :photo6 %>
-  <%= f.input :photo6_cache, as: :hidden %>
-  <%= f.input :photo7 %>
-  <%= f.input :photo7_cache, as: :hidden %>
-  <%= f.submit %>
-  <% end %>
-
-
-<br>
-<br>
-<br>
-<br>
-
-  <%= simple_form_for(@doc) do |f| %>
-  <%= f.input :photo_front %>
-  <%= f.input :photo_front_cache, as: :hidden %>
-  <%= f.input :photo_back %>
-  <%= f.input :photo_back_cache, as: :hidden %>
-  <%= f.submit %>
-  <% end %>
-
-<% if !@doc.photo_front.url.nil? %>
- <td><%= image_tag(@doc.photo_front.url(:thumb)) %></td>
-<% end %>
-<% if !@doc.photo_back.url.nil? %>
- <td><%= image_tag(@doc.photo_back.url(:thumb)) %></td>
-<% end %>
-    <!-- FOTO FIM -->
-
-
-
-</div>
-</div>
-</div>
-</div>
-
-<!-- wrapper fim -->
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr\>
-<div class="wrapper-devise">
-<div class="container">
-
-<!-- EDICAO DO PERFIL DE USUARIO -->
-<div class="row">
-  <div class="col-xs-12 col-sm-offset-2 col-sm-8">
-
-    <div class="thumbnail thumbstyle">
-      <div class="card card-block">
-
-      <div class="flexshow">
-      <div>
-        <h4 class="card-title text-center"><strong>Perfil</strong></h4>
-        <center><img class="card-img-top img-circle" src="http://www.fillmurray.com/150/150"></center>
-        <div class="card-block">
-          <h4 class="card-title text-center"><strong><%= @user.name %></strong></h4>
-          <p class="card-text text-center"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>  <%= @user.email %></p>
-          <% if current_user.is_female %>
-            <hr/>
-            <h4 class="card-title text-center"><strong>Anuncio</strong></h4>
-            <p class="card-text text-center">Cidade(s): <%= @user.pprofile.city %></p>
-            <p class="card-text text-center">Bairro(s): Jardins </p>
-            <p class="card-text text-center"><i class="fa fa-phone-square fa-fw"></i> <%= @user.pprofile.phone_number %></p>
-            <p class="card-text text-center"><i class="fa fa-calendar" aria-hidden="true"></i> de 15/02/2015 ate 17/06/2017</p>
-          <%end%>
-
-        </div>
-      </div>
-        <div>
-        <% if current_user.is_female %>
-          <%= link_to "Anunciar", edit_user_registration_path, class: "btn btn-danger btn-block btn-lg" %>
-          <br>
-        <%end%>
-        <%= link_to "Editar perfil", edit_user_registration_path%> <br>
-        <% if current_user.is_female %>
-          <%= link_to "Editar anuncio", edit_user_registration_path%> <br>
-          <%= link_to "Visualizar anuncio", pprofile_path(@user.pprofile)%> <br>
-        <%end%>
-        <%= link_to "Excluir perfil", edit_user_registration_path%>
-        </div>
-      </div>
-
-      </div>
-      <br>
-    </div>
-
-  </div>
-</div>
-<!-- FIM: EDICAO DO PERFIL DE USUARIO -->
-
-
-<% if current_user.is_female %>
-
-
-<!-- EDICAO DO PERFIL PUBLICO DO USUARIO -->
-<div class="thumbnail thumbstyle">
-  <div class="card card-block">
-  <h4 class="card-title text-center"><strong>Anuncio</strong></h4>
-
-<!-- CONTACT INFO-->
-    <center><h2 class="card-text"> <strong> <%= @pprofile.name %> </strong></h2></center>
-
-    <div class="flexshow">
-      <div>
-        <p class="card-text pmargin0"> <strong>Contato:</strong></p>
-        <p class="card-text pmargin0"><strong><i class="fa fa-phone-square fa-fw"></i></strong><%= @pprofile.phone_number %> </p>
-        <p class="card-text pmargin0"><strong> <i class="fa fa-map-marker fa-fw"></i> </strong><%= @pprofile.city %> </p>
-      </div>
-      <div>
-        <% if current_user.pprofile.nil? %>
-          <%= link_to "Preencher anuncio", edit_user_registration_path, class: "btn btn-danger" %>
-        <% else %>
-          <%= link_to "Anuncie em outra cidade", edit_user_registration_path, class: "btn btn-danger" %>
-        <% end %>
-      </div>
-    </div>
-    <hr/>
-
-<!-- FIM: CONTACT INFO-->
-
-
-
-<!-- CAROUSEL WITH PCTURES -->
-  <div>
-    <p class="card-text pmargin0"> <strong>Book:</strong></p>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="http://www.fillmurray.com/300/200" alt="Los Angeles">
-      </div>
-
-      <div class="item">
-        <img src="http://www.fillmurray.com/300/200" alt="Chicago">
-      </div>
-
-      <div class="item">
-        <img src="http://www.fillmurray.com/300/200" alt="New York">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    </div>
-  </div>
-<!-- FIM CAROUSEL WITH PICTURES -->
-
-    <br>
-    <center><p class="card-text pmargin0"><strong> Descricao: </strong><%= @pprofile.description %></p></center>
-    <hr/>
-
-
-    <p class="card-text pmargin0"><strong> Medias sociais: </strong></p>
-    <a class="card-text pmargin0"><strong> Website: </strong><%= @pprofile.site %></a><br>
-    <a class="card-text pmargin0"><strong> Forum: </strong><%= @pprofile.forum %></a><br>
-    <a class="card-text pmargin0"><strong> <i class="fa fa-instagram fa-fw"></i> </strong><%= @pprofile.instagram %></a><br>
-    <a class="card-text pmargin0"><strong> <i class="fa fa-twitter fa-fw"></i> </strong><%= @pprofile.twitter %></a>
-
-    <hr/>
-    <div class="flex">
-    <%= link_to "Anunciar", edit_user_registration_path, class: "btn btn-danger btn-block" %>
-    <%= link_to "Editar anuncio", edit_user_registration_path, class: "btn btn-danger btn-block" %>
-    <br>
-    </div>
-  </div>
-
-</div>
-<!-- FIM: EDICAO DO PERFIL PUBLICO DO USUARIO -->
-<%end%>
-
-</div>
-</div>
-
-
 
