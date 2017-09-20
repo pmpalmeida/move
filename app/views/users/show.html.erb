@@ -2,6 +2,45 @@
 <div style="background-color: black">
 
 <style>
+  .spacenavbar {
+    margin: 0px 0px;
+    background-color: black;
+    padding: 2px;
+  }
+
+  .separation1 {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 1px;
+  }
+</style>
+
+<!-- PERFIL -->
+<div class="spacenavbar"></div>
+
+<div class="container" style="background-color: white">
+
+  <p style="margin-top: 10px; padding: 5px"><strong>Perfil de usuario:</strong></p>
+
+  <div class="separation1"></div>
+
+  <center>
+    <% if !@user.photo.url(:thumb).nil? %>
+      <td><%= image_tag(@user.photo.url(:thumb)) %></td>
+    <% end %>
+    <h3><%= @user.name %></h3>
+    <h4><%= @user.email %></h4>
+    <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger"%>
+  </center>
+  <br>
+
+</div>
+<br>
+<!-- PERFIL FIM -->
+
+
+<style>
   .sep {
     height: 1px;
     background: #e8e8e8;
@@ -18,29 +57,7 @@
 
 
 
-    <!-- PERFIL -->
 
-    <div style="margin: 0px -25px; background: black; color: white">
-      <p style="padding: 5px"><strong>Perfil</strong></p>
-    </div>
-    <div class="sep"></div>
-    <br>
-
-    <div style="display: flex;">
-      <div margin-left: 50px>
-       <% if !@user.photo.url(:thumb).nil? %>
-        <td><%= image_tag(@user.photo.url(:thumb)) %></td>
-        <% end %>
-      </div>
-      <div style="margin-left: 20px">
-        <p><%= @user.name %></p>
-        <p><%= @user.email %></p>
-        <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger btn-block"%>
-      </div>
-    </div>
-    <br>
-
-    <!-- PERFIL FIM -->
 
 
 
