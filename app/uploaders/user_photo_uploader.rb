@@ -4,6 +4,10 @@ class UserPhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog                    # <- and this
 
+  def default_url
+    'defaultfemale.png'
+  end
+
   version :standard do
     resize_to_fill 400, 300
   end
