@@ -1,6 +1,10 @@
 class DocsController < ApplicationController
 
-    def update
+  def show
+    @doc = Doc.find(params[:id])
+  end
+
+  def update
     @doc = Doc.find(params[:id])
     @doc.update(doc_params)
     redirect_to user_path(current_user)
@@ -9,7 +13,7 @@ class DocsController < ApplicationController
 end
 
 
- private
+private
 
 
 def doc_params

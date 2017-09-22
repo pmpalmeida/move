@@ -11,6 +11,8 @@
   .separation1 {
     margin-top: -10px;
     margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     background-color: black;
     padding: 1px;
   }
@@ -19,24 +21,30 @@
 <!-- PERFIL -->
 <div class="spacenavbar"></div>
 
-<div class="container" style="background-color: white">
+<div class="container">
+  <div class="row" style="margin-top: 1px">
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
 
-  <p style="margin-top: 10px; padding: 5px"><strong>Perfil de usuario:</strong></p>
+    <div class="border-form-div">
+      <h4 style="padding: 10px; margin-bottom: -10px"><strong>Perfil de usuario:</strong></h4>
 
-  <div class="separation1"></div>
+      <div class="separation1"></div>
 
-  <center>
-    <% if !@user.photo.url(:thumb).nil? %>
-      <td><%= image_tag(@user.photo.url(:thumb)) %></td>
-    <% end %>
-    <h3><%= @user.name %></h3>
-    <h4><%= @user.email %></h4>
-    <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger"%>
-  </center>
-  <br>
+      <center>
+      <br>
+        <% if !@user.photo.url(:thumb).nil? %>
+          <td><%= image_tag(@user.photo.url(:thumb)) %></td>
+        <% end %>
+        <h3><%= @user.name %></h3>
+        <h4><%= @user.email %></h4>
+        <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-danger"%>
+      </center>
+      <br>
+    </div>
 
+  </div>
+  </div>
 </div>
-<br>
 <!-- PERFIL FIM -->
 
 
@@ -44,71 +52,64 @@
   .sep {
     height: 1px;
     background: #e8e8e8;
-    margin: 0px -25px;
+    margin: -10px -25px;
 }
 </style>
+
+<% if !current_user.pprofile.nil? %>
 
 <div class="container">
 <div class="row">
 <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-<br>
-<div class="border-form-div">
 
 
-
-
-
-
-
-
+ <div class="border-form-div">
+      <h4 style="padding: 10px; margin-bottom: -10px"><strong>Anuncio:</strong></h4>
+      <div class="separation1"></div>
 
 
 <!-- ANUNCIO -->
-<% if !current_user.pprofile.nil? %>
-
-<div style="margin: 0px -25px; background: black; color: white">
-<p style="padding: 5px"><strong>Anuncio</strong></p>
-</div>
-<div class="sep"></div>
-
+  <br>
   <p><center>Preencha o anuncio com suas informacoes e clique em salvar anuncio para publica-lo</center></p>
+  <br>
 
-  <p style="margin: 0px -15px"><strong>Contato</strong></p>
+  <center><p><strong>Informacoes de contato</strong></p></center>
   <div class="sep"></div>
   <br>
 
   <%= simple_form_for [@pprofile], defaults: { input_html: { class: 'default_class' } }  do |f| %>
+
     <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
     <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
-
-
-
     <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
 
 
 
   <br>
-  <p style="margin: 0px -15px"><strong>Book</strong></p>
+  <center><p><strong>Book de fotos</strong></p></center>
     <div class="sep"></div>
   <br>
 
+   <p><center>Voce pode selecionar ate 7 fotos para aparecer no seu perfil</center></p>
+
+  <hr/>
   <center><%= f.input :photo1, :label => "Foto 1", input_html: { class: 'btn-danger' } %></center>
   <%= f.input :photo1_cache, as: :hidden %>
-    <center><%= image_tag(@pprofile.photo1.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo1.url(:small)) %></center>
   <hr/>
 
   <%= f.input :photo2, :label => "Foto 2", class: "btn-danger" %>
   <%= f.input :photo2_cache, as: :hidden %>
   <% if !@pprofile.photo2.url.nil? %>
-    <center><%= image_tag(@pprofile.photo2.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo2.url(:small)) %></center>
   <% end %>
   <hr/>
 
   <%= f.input :photo3, :label => "Foto 3", prompt: "Select your age" %>
   <%= f.input :photo3_cache, as: :hidden %>
   <% if !@pprofile.photo3.url.nil? %>
-    <center><%= image_tag(@pprofile.photo3.url(:standard)) %></center>
+    <center><%= image_tag(@pprofile.photo3.url(:small)) %></center>
   <% end %>
   <hr/>
 
@@ -143,25 +144,28 @@
 
 
 
-   <p style="margin: 0px -15px"><strong>Medias sociais</strong></p>
+   <center><p><strong>Medias sociais</strong></p></center>
     <div class="sep"></div>
-
+  <br>
     <p><center>Caso voce tenha Twitter, Instagram, website ou seja mencionada em forum voce pode listar tudo isso nessa secao, mas so se voce realmente quiser1 :)</center></p>
     <br>
 
-    <%= f.input :twitter, as: :url, placeholder: "Endereco do Twiiter", :label => "Twiiter"%>
-    <%= f.input :instagram, placeholder: "Endereco do Instagram", :label => "Instagram" %>
-    <%= f.input :site, placeholder: "Link para website", :label => "Website" %>
-    <%= f.input :forum, placeholder: "Link para forum", :label => "Forum" %>
-
-   <%= f.submit "Salvar informacoes do anuncio", class: "btn btn-danger" %>
-
-
-
+    <%= f.input :twitter, as: :url, placeholder: "http://www.twitter.com/seu_endereco", :label => "Twiiter"%>
+    <%= f.input :instagram, placeholder: "http://www.instagram/seu_endereco", :label => "Instagram" %>
+    <%= f.input :site, placeholder: "http://www.seu_endereco.com.br", :label => "Website" %>
+    <%= f.input :forum, placeholder: "http://www.seu_endereco", :label => "Forum" %>
+    <center>
+   <%= f.submit "Salvar informacoes do anuncio", class: "btn btn-danger";%>
+  </center>
   <% end %>
 
   <br>
-
 <%end%>
+</div>
+</div>
+</div>
+  <br>
+  <br>
+  <br>
 <!-- ANUNCIO FIM -->
 
