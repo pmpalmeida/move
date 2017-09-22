@@ -10,9 +10,14 @@ class PprofilesController < ApplicationController
     @doc = @pprofile.doc
 
     if @doc.nil?
-      @doc = Doc.create
-      @pprofile.doc = @doc
-      @pprofile.doc.save
+      @doc = Doc.new
+      @doc = @pprofile.doc
+      @doc.save
+
+      #@doc = Doc.create
+      #@pprofile.doc = @doc
+      #@pprofile.doc.save
+
       redirect_to doc_path(@doc) #redirecionar para documentacao
     else
       redirect_to user_path(current_user) #redirecionar para escolha de cidade

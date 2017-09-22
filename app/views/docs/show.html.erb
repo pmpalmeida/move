@@ -1,0 +1,86 @@
+
+<div style="background-color: black">
+
+<style>
+  .spacenavbar {
+    margin: 0px 0px;
+    background-color: black;
+    padding: 2px;
+  }
+
+  .separation1 {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: black;
+    padding: 1px;
+  }
+
+  .sep {
+    height: 1px;
+    background: #e8e8e8;
+    margin: -10px -25px;
+}
+</style>
+
+
+
+<% if !current_user.pprofile.nil? %>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+
+<div class="spacenavbar"></div>
+ <div class="border-form-div">
+      <h4 style="padding: 10px; margin-bottom: -10px"><strong>Documentacao:</strong></h4>
+      <div class="separation1"></div>
+
+
+<!-- DOCUMENTACAO -->
+
+  <br>
+  <p><center>Por favor, inclua a foto de um documento com foto frente e verso. Faremos a verificacao e assim que aprovado seu perfil estara no ar</center></p>
+  <br>
+
+  <%= simple_form_for [@doc], defaults: { input_html: { class: 'default_class' } }  do |f| %>
+
+  <br>
+  <center><p><strong>Documento FRENTE</strong></p></center>
+    <div class="sep"></div>
+  <br>
+
+  <center><%= f.input :photo_front, :label => "Foto 1", input_html: { class: 'btn-danger' } %></center>
+  <%= f.input :photo_front_cache, as: :hidden %>
+    <center><%= image_tag(@doc.photo_front.url(:thumb)) %></center>
+
+  <br>
+  <br>
+  <br>
+  <center><p><strong>Documento VERSO</strong></p></center>
+    <div class="sep"></div>
+  <br>
+
+  <center><%= f.input :photo_back, :label => "Foto 2",  input_html: { class: 'btn-danger' } %></center>
+  <%= f.input :photo_back_cache, as: :hidden %>
+  <% if !@doc.photo_back.url.nil? %>
+    <center><%= image_tag(@doc.photo_back.url(:thumb)) %></center>
+  <% end %>
+  <br>
+
+<center>
+   <%= f.submit "Salvar documentacao", class: "btn btn-danger";%>
+  </center>
+  <% end %>
+
+  <br>
+<%end%>
+</div>
+</div>
+</div>
+  <br>
+  <br>
+  <br>
+<!-- DOCUMENTACAO FIM -->
+
