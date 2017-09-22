@@ -16,8 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show ]
 
 
-
-  resources :docs, only: [ :update]
+  resources :docs, only: [ :show, :update]
 
   #get 'payments', to: "payments#payview"
 

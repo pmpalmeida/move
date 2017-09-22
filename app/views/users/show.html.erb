@@ -78,11 +78,9 @@
   <br>
 
   <%= simple_form_for [@pprofile], defaults: { input_html: { class: 'default_class' } }  do |f| %>
+
     <%= f.input :name, placeholder: "Nome para o anuncio", :label => "Nome" %>
     <%= f.input :phone_number, placeholder: "Telefone", :label => "Telefone"  %>
-
-
-
     <%= f.input :description, as: :text, placeholder: "Descricao", :label => "Descricao"  %>
 
 
