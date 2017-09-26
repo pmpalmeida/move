@@ -10,9 +10,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black
 }
 .banner h1 {
-  font-size: 25px;
+  font-size: 30px;
 
 }
 .mktp {
@@ -28,18 +29,18 @@
 
 
 
-<div class="banner" style="background-image: linear-gradient(-225deg, #B23A48 0%, #941B0C 50%), url('background.jpg');">
+<div class="banner"">
   <div class="banner-content">
   <br>
   <br>
-    <%= image_tag("move-logo.png", height: 200, width: 300) %>
+    <%= image_tag("logo2.png", height: 200, width: 300) %>
     <h1 style="padding: 15px">Encontre as melhores MVs perto de voce!</h1>
 
 
     <!-- DROPDOWN BEGIN -->
     <div class="btn-group show-on-hover">
       <button type="button" class="btn btn-danger btn-lg btn-round" data-toggle="dropdown">
-        <strong>Cidades</strong> <span class="caret"></span>
+        <strong>Cidade</strong> <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
 
@@ -52,7 +53,8 @@
       </ul>
     </div>
     <!-- DROP DOWN END-->
-
+  <br>
+  <br>
 <hr/>
 <p>Novidades</p>
 <div class="container">
@@ -60,12 +62,24 @@
   <div class="row">
 
     <div class="col-xs-12 col-sm-4">
+
       <center>
-        <% if !@photo.photo1.url(:thumb).nil? %>
-        <td><%= image_tag(@photo.photo1.url(:thumb)) %></td>
-        <% end %>
-        <p>name pporfile</p>
+      <div style="max-width: 140px;">
+        <%= image_tag(Pprofile.last.photo1.url(:home), :style => "z-index: -10px") %>
+      <!-- label -->
+        <div style="color: black; margin-top: -32px; text-decoration: bold">
+          <div class="flexpost">
+            <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/30/30/people/9/">
+            <div>
+              <h3 class="headerpost"><%=Pprofile.last.name%></h3>
+              <h3 class="headerpost"><%=Pprofile.last.city%></h3>
+            </div>
+          </div>
+        </div>
+      <!-- label fim -->
+      </div>
       </center>
+
     </div>
 
       <div class="col-xs-12 col-sm-4">
@@ -83,6 +97,12 @@
     </div>
     </div>
   </div>
+  <% @pprofiles = Pprofile.all %>
+  <% @pprofiles.each do |pprofile| %>
+        <%if pprofile.id > 4%>
+          <li>User ID <%= pprofile.user.id%> - PPROFILE ID <%=pprofile.id%> - <%=pprofile.name%></li>
+        <%end%>
+  <% end %>
 
   <%if current_user.nil? %>
     <br>
@@ -107,6 +127,7 @@
     <div class="col-xs-6">
 
       <div style="margin-top: 50px;">
+      <center><p class="mktp">Voce eh cliente?</p></center>
         <center><%= link_to "Inscreva-se", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
         <p class="mktp">Veja conteudo exclusivo postado diariamente</p>
       </div>
@@ -116,6 +137,7 @@
     <div class="col-xs-6">
 
       <div style="margin-top: 50px;">
+      <center><p class="mktp">Voce eh modelo?</p></center>
         <center><%= link_to "Anuncie", new_user_registration_path, class: "btn btn-lg btn-danger" %></center>
         <p class="mktp">Seja vista por milhares de pessoas na cidade que voce preferir</p>
       </div>

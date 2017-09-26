@@ -15,7 +15,13 @@
     margin-left: 10px;
     background-color: black;
     padding: 1px;
+
   }
+  .sep {
+    height: 1px;
+    background: #e8e8e8;
+    margin: -10px -25px;
+}
 </style>
 
 <!-- PERFIL -->
@@ -48,13 +54,10 @@
 <!-- PERFIL FIM -->
 
 
-<style>
-  .sep {
-    height: 1px;
-    background: #e8e8e8;
-    margin: -10px -25px;
-}
-</style>
+<!-- ANUNCIO -->
+
+<% if current_user.is_female %> <!-- check if user is female to show profile -->
+
 
 <% if !current_user.pprofile.nil? %>
 
@@ -68,7 +71,7 @@
       <div class="separation1"></div>
 
 
-<!-- ANUNCIO -->
+
   <br>
   <p><center>Preencha o anuncio com suas informacoes e clique em salvar anuncio para publica-lo</center></p>
   <br>
@@ -164,6 +167,7 @@
 </div>
 </div>
 </div>
+<% end %>
   <br>
   <br>
   <br>
