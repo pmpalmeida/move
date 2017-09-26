@@ -4,7 +4,12 @@ class PagesController < ApplicationController
   def home
 
     @cities = City.all
-    @photo = Book.last
+
+    @pprofile = Pprofile.all.reverse
+      @pprofile1 = @pprofile[0]
+      @pprofile2 = @pprofile[1]
+      @pprofile3 = @pprofile[2]
+
 
   end
 
