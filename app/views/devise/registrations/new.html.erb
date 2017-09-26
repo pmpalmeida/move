@@ -1,3 +1,7 @@
+
+
+
+
 <div class="wrapper-devise">
 <div class="container">
   <div class="row">
@@ -16,14 +20,14 @@
 
     <%= f.input :name, required: true, autofocus: true %>
 
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+
     <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Homem" %> </div>
     <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Mulher (Modelo)" %> </div>
     <br>
-
-
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
 
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
@@ -34,6 +38,8 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+<br>
+<br>
 
 <%= render "devise/shared/links" %>
 </div>
