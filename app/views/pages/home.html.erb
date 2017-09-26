@@ -55,21 +55,24 @@
     <!-- DROP DOWN END-->
   <br>
   <br>
-<hr/>
-<p>Novidades</p>
+
+<h4 style="text-align: left; margin-left: 10px; margin-bottom: 2px">Novidades</h4>
+<div style="margin: 0px 0px; background-color: white; padding: 1px;"></div>
+<br>
 <div class="container">
 
   <div class="row">
 
     <div class="col-xs-12 col-sm-4">
 
+      <%= link_to pprofile_path(Pprofile.last) do %>
       <center>
-      <div style="max-width: 140px;">
+      <div style="max-width: 200px;">
         <%= image_tag(Pprofile.last.photo1.url(:home), :style => "z-index: -10px") %>
       <!-- label -->
-        <div style="color: black; margin-top: -32px; text-decoration: bold">
+        <div style="color: black; margin-top: -42px; text-decoration: bold;">
           <div class="flexpost">
-            <img align="left" class="card-img-top img-circle" style="margin-right: 5px" src="http://lorempixel.com/30/30/people/9/">
+            <%= image_tag(Pprofile.last.photo1.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
             <div>
               <h3 class="headerpost"><%=Pprofile.last.name%></h3>
               <h3 class="headerpost"><%=Pprofile.last.city%></h3>
@@ -79,6 +82,8 @@
       <!-- label fim -->
       </div>
       </center>
+      <%end%>
+      <br>
 
     </div>
 

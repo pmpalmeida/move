@@ -25,7 +25,11 @@ class PprofilePhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :home do
-    resize_to_fill 140, 140
+    resize_to_fill 200, 200
+  end
+
+  version :label do
+    resize_to_fill 40, 40
   end
 
 end
