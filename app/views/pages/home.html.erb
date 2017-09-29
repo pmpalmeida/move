@@ -69,11 +69,11 @@
       <%= link_to pprofile_path(@pprofile1) do %>
       <center>
       <div style="max-width: 200px;">
-        <%= image_tag(@pprofile1.photo1.url(:home), :style => "z-index: -10px") %>
+        <%= image_tag(@user1.photo.url(:home), :style => "z-index: -10px") %>
       <!-- label -->
         <div style="color: black; margin-top: -42px; text-decoration: bold;">
           <div class="flexpost">
-            <%= image_tag(@pprofile1.photo1.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
+            <%= image_tag(@user1.photo.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
             <div>
               <h3 class="headerpost"><%=@pprofile1.name%></h3>
               <h3 class="headerpost"><%=@pprofile1.city%></h3>
@@ -94,11 +94,11 @@
       <%= link_to pprofile_path(@pprofile2) do %>
       <center>
       <div style="max-width: 200px;">
-        <%= image_tag(@pprofile2.photo1.url(:home), :style => "z-index: -10px") %>
+        <%= image_tag(@user2.photo.url(:home), :style => "z-index: -10px") %>
       <!-- label -->
         <div style="color: black; margin-top: -42px; text-decoration: bold;">
           <div class="flexpost">
-            <%= image_tag(@pprofile2.photo1.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
+            <%= image_tag(@user2.photo.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
             <div>
               <h3 class="headerpost"><%=@pprofile2.name%></h3>
               <h3 class="headerpost"><%=@pprofile2.city%></h3>
@@ -118,11 +118,11 @@
       <%= link_to pprofile_path(@pprofile3) do %>
       <center>
       <div style="max-width: 200px;">
-        <%= image_tag(@pprofile3.photo1.url(:home), :style => "z-index: -10px") %>
+        <%= image_tag(@user3.photo.url(:home), :style => "z-index: -10px") %>
       <!-- label -->
         <div style="color: black; margin-top: -42px; text-decoration: bold;">
           <div class="flexpost">
-            <%= image_tag(@pprofile3.photo1.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
+            <%= image_tag(@user3.photo.url(:label), :class=> "card-img-top img-circle", :style => "margin-right: 5px") %>
             <div>
               <h3 class="headerpost"><%=@pprofile3.name%></h3>
               <h3 class="headerpost"><%=@pprofile3.city%></h3>
