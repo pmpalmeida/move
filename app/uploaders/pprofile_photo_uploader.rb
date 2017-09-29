@@ -4,9 +4,6 @@ class PprofilePhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog                    # <- and this
 
-
-
-
 # default URL caso nao haja foto
   def default_url
     'defaultfemale.png'

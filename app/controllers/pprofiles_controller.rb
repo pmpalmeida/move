@@ -20,7 +20,7 @@ class PprofilesController < ApplicationController
 
       redirect_to doc_path(@doc) #redirecionar para documentacao
     else
-      redirect_to user_path(current_user) #redirecionar para escolha de cidade
+      redirect_to user_path(current_user) #redirecionar para escolha de plano
     end
   end
 

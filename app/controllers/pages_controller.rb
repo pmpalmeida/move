@@ -10,6 +10,10 @@ class PagesController < ApplicationController
       @pprofile2 = @pprofile[1]
       @pprofile3 = @pprofile[2]
 
+      @user1 = @pprofile1.user
+      @user2 = @pprofile2.user
+      @user3 = @pprofile3.user
+
 
   end
 
