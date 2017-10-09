@@ -7,7 +7,8 @@ class DocsController < ApplicationController
   def update
     @doc = Doc.find(params[:id])
     @doc.update(doc_params)
-    redirect_to user_path(current_user)
+    @pprofile = @doc.pprofile
+    redirect_to pprofile_path(@pprofile)
   end
 
 end

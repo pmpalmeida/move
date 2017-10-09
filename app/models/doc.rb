@@ -1,4 +1,5 @@
 class Doc < ApplicationRecord
+
   belongs_to :pprofile
 
   mount_uploader :photo_front, DocPhotoUploader

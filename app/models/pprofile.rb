@@ -2,11 +2,13 @@ class Pprofile < ApplicationRecord
 
   belongs_to :user, optional: true
 
+  belongs_to :city, optional: true
+
   has_one :doc, dependent: :destroy
-  has_one :book, dependent: :destroy
 
 
-  has_one :pprofile_photo
+  #has_one :book, dependent: :destroy
+  #has_one :pprofile_photo
 
 
   mount_uploader :photo_profile, PprofilePhotoUploader
