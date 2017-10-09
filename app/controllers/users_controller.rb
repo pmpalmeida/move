@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     if current_user == @user
       if !@user.pprofile.nil?
         @pprofile = @user.pprofile
-        #@book = @pprofile.book
         @doc = @pprofile.doc
         # @pprofile.city = @user.cities.first.name
       else
@@ -17,19 +16,15 @@ class UsersController < ApplicationController
 
         if @user.is_female
 
-          @pprofile = Pprofile.new
-          @pprofile.save
+          @pprofile = Pprofile.create
           @user.pprofile = @pprofile
-
-          @book = Book.new
-          @book.is_ready = false
-          @book.pprofile = @pprofile
-          @book.save
+          @user.save
 
           @doc = Doc.new
           @doc.is_ready = false
-          @doc.pprofile = @pprofile
           @doc.save
+          @pprofile.doc = @doc
+          @pprofile.save
 
         end
       end

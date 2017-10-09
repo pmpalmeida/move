@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711021239) do
+ActiveRecord::Schema.define(version: 20171009202610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,25 +79,29 @@ ActiveRecord::Schema.define(version: 20170711021239) do
 
   create_table "pprofiles", force: :cascade do |t|
     t.string   "name"
-    t.string   "city"
     t.string   "site"
     t.string   "instagram"
     t.string   "twitter"
     t.string   "forum"
-    t.datetime "created_at",                                                                                                                                                              null: false
-    t.datetime "updated_at",                                                                                                                                                              null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
     t.string   "neighborhood"
     t.string   "phone_number"
     t.text     "description"
-    t.string   "photo_profile", default: "http://s4.storage.akamai.coub.com/get/b30/p/coub/simple/cw_timeline_pic/f41ea52c56a/40e3a11a1224c3423d307/med_1409617522_1382490910_image.jpg"
-    t.string   "photo1",        default: "http://s4.storage.akamai.coub.com/get/b30/p/coub/simple/cw_timeline_pic/f41ea52c56a/40e3a11a1224c3423d307/med_1409617522_1382490910_image.jpg"
     t.string   "photo2"
     t.string   "photo3"
     t.string   "photo4"
     t.string   "photo5"
     t.string   "photo6"
     t.string   "photo7"
+    t.integer  "doc_id"
+    t.integer  "city_id"
+    t.string   "photo_profile"
+    t.string   "photo1"
+    t.string   "cityname"
+    t.index ["city_id"], name: "index_pprofiles_on_city_id", using: :btree
+    t.index ["doc_id"], name: "index_pprofiles_on_doc_id", using: :btree
     t.index ["user_id"], name: "index_pprofiles_on_user_id", using: :btree
   end
 
@@ -127,5 +131,7 @@ ActiveRecord::Schema.define(version: 20170711021239) do
   add_foreign_key "citypresences", "users"
   add_foreign_key "docs", "pprofiles"
   add_foreign_key "pprofile_photos", "pprofiles"
+  add_foreign_key "pprofiles", "cities"
+  add_foreign_key "pprofiles", "docs"
   add_foreign_key "pprofiles", "users"
 end
