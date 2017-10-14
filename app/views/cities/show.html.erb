@@ -10,6 +10,7 @@
 .flexbox {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .multi-item-carousel{
@@ -71,44 +72,49 @@ h1{
   <div class="container">
     <br>
     <div class="flexbox">
-      <h4><%= @city.name %></h4>
+      <h4 style="margin-left: 10px"><%= @city.name %></h4>
     </div>
-    <hr style="margin-top: -7px; margin-bottom: 9px"/>
+    <hr style="margin-top: -7px; margin-bottom: 15px"/>
   </div>
   <!--FIM - Divisor com logo e titulo da cidade -->
 
 
-
-<div class="container" style="background-color: #292929; padding: 5px; padding-top: 15px; padding-bottom: 15px ">
+<div class="" style="background-color: #292929; padding: 5px; padding-top: 15px; padding-bottom: 15px;">
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner"  style="max-height: 200px">
           <div class="item active">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
+            <!-- <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/200/f44336/000000"   class="img-responsive"></a></div> -->
+            <!-- <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/200/f44336/000000" class="img-responsive"></a></div> -->
+            <!-- <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/200/f44336/000000" class="img-responsive"></a></div> -->
+
+            <div class="col-xs-4"> <div style="max-width: 200px;"><%= image_tag(Pprofile.last.photo1.url(:home), class: "img-responsive")%></div></div>
+            <div class="col-xs-4"> <div style="max-width: 200px;"><%= image_tag(Pprofile.last.photo1.url(:home), class: "img-responsive")%></div></div>
+            <div class="col-xs-4"> <div style="max-width: 200px;"><%= image_tag(Pprofile.last.photo1.url(:home), class: "img-responsive")%></div></div>
+
+
           </div>
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/e91e63/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/e91e63/000000" ></a></div>
           </div>
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/9c27b0/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/9c27b0/000000" class="img-responsive"></a></div>
           </div>
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/673ab7/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/673ab7/000000" class="img-responsive"></a></div>
           </div>
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/4caf50/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/4caf50/000000" class="img-responsive"></a></div>
           </div>
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/8bc34a/000000" class="img-responsive"></a></div>
           </div>
           <!-- add  more items here -->
           <!-- Example item start:  -->
 
           <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/100/8bc34a/000000" class="img-responsive"></a></div>
           </div>
 
           <!--  Example item end -->
@@ -120,11 +126,12 @@ h1{
   </div>
 </div>
 
+<br>
 
+<div class="container">
+<img src="http://placehold.it/600x400" alt="...">
 
-
-
-
+</div>
 
 
 
