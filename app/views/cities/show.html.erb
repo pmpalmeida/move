@@ -94,14 +94,16 @@ h1{
   </div>
 </div>
 
-<br>
+
 
 
   <div  style="max-width: 1000px; margin:0px auto !important;">
 
-    <div class="container" style="max-width: 1000px;  max-height: 600px; padding: 0px; display: flex">
+    <div class="container" style="max-width: 1000px;  max-height: 600px; padding: 0px;">
+    <div style="display: flex">
       <%= image_tag(Pprofile.last.photo4.url(), style:"width: 50%; object-fit: contain; padding: 2px", class: "img-responsive") %>
       <%= image_tag(Pprofile.last.photo4.url(), style:"width: 50%; object-fit: contain; padding: 2px", class: "img-responsive") %>
+    </div>
     </div>
 
   </div>
