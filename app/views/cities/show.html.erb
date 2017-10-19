@@ -36,17 +36,43 @@ h1{
 
 <div class="banner">
 
-  <!-- Divisor com logo e titulo da cidade -->
-  <div class="container">
-    <br>
-    <div class="flexbox">
-      <h4 style="margin-left: 10px"><%= @city.name %></h4>
-    </div>
-    <hr style="margin-top: -7px; margin-bottom: 0px"/>
+<!-- Divisor com logo e titulo da cidade -->
+<div class="container">
+  <br>
+  <div class="flexbox">
+    <h4 style="margin-left: 10px"><%= @city.name %></h4>
+    <h4 style="margin-right: 10px">Novidades</h4>
   </div>
-  <!--FIM - Divisor com logo e titulo da cidade -->
+  <hr style="margin-top: -7px; margin-bottom: 0px"/>
+</div>
+<br>
+<!--FIM - Divisor com logo e titulo da cidade -->
 
+<!-- IMAGE GRID - BEGINING -->
+<div class="container">
+  <div style="display: flex; justify-content: center;">
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
+      <%= image_tag(Pprofile.last.photo4.url(), style:"object-fit: cover; margin: 3px; height: 50vh; float :left;outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; margin: 3px; height: 20vh; float :right; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; margin: 3px; height: 30vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+    </div>
 
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
+      <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; margin: 3px; height: 61vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; margin: 3px;height: 40vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+    </div>
+  </div>
+</div>
+<br>
+<!-- IMAGE GRID - END -->
+
+<div class="container">
+  <div class="flexbox">
+    <h4 style="margin-left: 10px">Ultimos posts</h4>
+  </div>
+  <hr style="margin-top: -7px; margin-bottom: 0px"/>
+</div>
+<br>
 <div class="" style="background-color: #292929; padding: 5px; padding-top: 15px; padding-bottom: 15px;">
   <div class="row">
     <div class="col-md-12">
@@ -93,28 +119,16 @@ h1{
     </div>
   </div>
 </div>
-
-<hr/>
+<br>
 
 <div class="container">
-  <div style="display: flex; justify-content: center;">
-
-    <div style="border-style: solid; border-width: 1px; border-color: black;">
-      <%= image_tag(Pprofile.last.photo4.url(), style:"object-fit: cover; margin: 3px; height: 50vh; float :left;outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-      <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; margin: 3px; height: 20vh; float :right; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; margin: 3px; height: 30vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-    </div>
-
-    <div style="border-style: solid; border-width: 1px; border-color: black;">
-      <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; margin: 3px; height: 61vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; margin: 3px;height: 40vh; float :left; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-    </div>
-
+  <div class="flexbox">
+    <h4 style="margin-left: 10px">Modelos</h4>
+    <h4 style="margin-right: 10px"><%= @city.name %></h4>
   </div>
-
+  <hr style="margin-top: -7px; margin-bottom: 0px"/>
 </div>
-
-<hr/>
+<br>
 
 <div class="container">
 
