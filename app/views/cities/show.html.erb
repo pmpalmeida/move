@@ -94,20 +94,64 @@ h1{
   </div>
 </div>
 
+<hr/>
 
+<div class="container">
+  <div style="display: flex; justify-content: center;">
 
-
-  <div  style="max-width: 1000px; margin:0px auto !important;">
-
-    <div class="container" style="max-width: 1000px;  max-height: 600px; padding: 0px;">
-    <div style="display: flex">
-      <%= image_tag(Pprofile.last.photo4.url(), style:"width: 50%; object-fit: contain; padding: 2px", class: "img-responsive") %>
-      <%= image_tag(Pprofile.last.photo4.url(), style:"width: 50%; object-fit: contain; padding: 2px", class: "img-responsive") %>
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
+      <%= image_tag(Pprofile.last.photo4.url(), style:"object-fit: cover; margin: 3px; height: 50vh; float :right", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; margin: 3px; height: 20vh; float :right", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; margin: 3px; height: 30vh; float :right", class: "img-responsive") %>
     </div>
+
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
+      <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; margin: 3px; height: 61vh; float :left", class: "img-responsive") %>
+      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; margin: 3px;height: 40vh; float :left", class: "img-responsive") %>
     </div>
 
   </div>
 
+</div>
+
+<hr/>
+
+     <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin: 0px">
+          <div>
+            <%= image_tag(Pprofile.last.photo1.url(),style:"object-fit: cover; margin-right: 2px; padding: 10px;", class: "img-responsive") %>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin: 0px">
+          <div>
+            <%= image_tag(Pprofile.last.photo4.url(),style:"object-fit: cover; margin-right: 2px; padding: 10px;", class: "img-responsive") %>
+            <%= image_tag(Pprofile.last.photo4.url(),style:"object-fit: cover; margin-right: 2px; padding: 10px;", class: "img-responsive") %>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin: 0px">
+          <div>
+            <%= image_tag(Pprofile.last.photo2.url(),style:"object-fit: cover; margin-right: 2px; padding: 10px;", class: "img-responsive") %>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin: 0px">
+
+          <div style="border-style: solid; margin: 1px">
+          <%= image_tag(Pprofile.last.photo4.url(), style:"object-fit: cover; padding: 2px;", class: "img-responsive") %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div style="border-style: solid; margin: 1px">
+          <%= image_tag(Pprofile.last.photo4.url(), style:"object-fit: cover; padding: 2px;", class: "img-responsive") %>
+          </div>
+        </div>
+      </div>
+    </div>
 <br>
 <br>
 
