@@ -1,5 +1,6 @@
 
 
+
 .banner {
   color: white;
   background-color: black;
@@ -17,4 +18,43 @@
 
 .header-carousel card {
   object-fit: contain;
+}
+
+
+// GRID
+.photo-grid {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+}
+.position1 {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
+.position2 {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+.position3 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}
+
+// MOSAIC
+
+.mosaic {
+  display: flex;
+}
+
+.mosaic-iten {
+  align: center;
+  flex-grow: 1;
+  margin: 3px;
+  flex: 0 0 70%;
+}
+
+.mosaic-iten2 {
+  flex-grow: 1;
+  margin: 3px;
+  flex: 0 0 30%;
 }
