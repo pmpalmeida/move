@@ -1,0 +1,20 @@
+
+
+.banner {
+  color: white;
+  background-color: black;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+// CARDS NO CAROUSEL
+
+.header-carousel card {
+  object-fit: contain;
+}
