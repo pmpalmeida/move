@@ -69,16 +69,15 @@
   outline: 1px solid black;
   outline-offset: -4px;
   max-height: 80vh;
-
-  @media screen and (max-width: 480px) {
-    .photo-mosaicA {
-      max-height: 10vh;
-    }
-  }
 }
 
-@media (max-width: 480px){
-  .photo-mosaicA {
-    max-height: 50vh;
-  }
+
+.flex-mosaic{
+  display: flex;
+  justify-content: space-around;
+}
+
+.star-destaq {
+  writing-mode: vertical-rl;
+
 }
