@@ -21,6 +21,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 
+gem "jquery-slick-rails"
+
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

@@ -1,0 +1,84 @@
+
+
+
+.banner {
+  color: white;
+  background-color: black;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+// CARDS NO CAROUSEL
+
+.header-carousel card {
+  object-fit: contain;
+}
+
+
+// GRID
+.photo-grid {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+}
+.position1 {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
+.position2 {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+.position3 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}
+
+// MOSAIC
+
+.mosaic {
+  display: flex;
+  justify-content: center;
+}
+
+.mosaic-iten {
+  align: center;
+  flex-grow: 1;
+  margin: 3px;
+  flex: 0 0 70%;
+  width: 70%;
+  align-self: center;
+  justify-content: center;
+}
+
+.photo-mosaicB {
+  object-fit: cover;
+  outline: 1px solid black;
+  outline-offset: -4px;
+  max-width: 10vw;
+}
+
+.photo-mosaicA {
+  object-fit: cover;
+  outline: 1px solid black;
+  outline-offset: -4px;
+  max-height: 80vh;
+
+  @media screen and (max-width: 480px) {
+    .photo-mosaicA {
+      max-height: 10vh;
+    }
+  }
+}
+
+@media (max-width: 480px){
+  .photo-mosaicA {
+    max-height: 50vh;
+  }
+}
