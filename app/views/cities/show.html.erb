@@ -1,5 +1,14 @@
 
-
+<style>
+  @media(max-width: 480px){
+  .photo-mosaicA {
+    max-width: 40vw;
+  }
+  .photo-mosaicB {
+    max-width: 25vw;
+  }
+}
+</style>
 
 
 <div class="banner">
@@ -19,7 +28,7 @@
 <div class='container'>
   <div class="header-carousel">
     <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; object-fit: cover; padding: 3px")%>
+    <%= image_tag(Pprofile.last.photo1.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; object-fit: cover; padding: 3px")%>
     <p>TESTE</p>
     </div>
 
@@ -29,7 +38,7 @@
     </div>
 
      <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
+    <%= image_tag(Pprofile.last.photo2.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
     <p>TESTE</p>
     </div>
 
@@ -55,19 +64,20 @@
 
 <!-- xxxxxxxxxxxxxxxx -->
 
+<br>
+
 <div class="container">
-<div class="mosaic">
-  <div class="mosaic-iten">
-  <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
-  </div>
+  <div class="mosaic">
+    <%= image_tag(Pprofile.last.photo1.url(), class: "img-responsive mosaic-iten photo-mosaicB") %>
 
-  <div class="mosaic-iten2">
-  <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; outline: 1px solid black; outline-offset: -4px; max-height: 200px; margin-left: 0px", class: "img-responsive") %>
-  </div>
+    <%= image_tag(Pprofile.last.photo2.url(), class: "img-responsive mosaic-iten photo-mosaicA") %>
 
-</div>
+    <%= image_tag(Pprofile.last.photo3.url(), class: "img-responsive mosaic-iten photo-mosaicB") %>
+  </div>
 </div>
 
+<br>
+<br>
 
 <!-- xxxxxxxxxxxxxxxxxx -->
 <div class="photo-grid">
@@ -108,7 +118,7 @@
 
           <br>
 
-          <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; height: 25vh; outline: 1px solid black; outline-offset: -4px; ", class: "img-responsive") %>
+          <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; height: 24.75vh; outline: 1px solid black; outline-offset: -4px; ", class: "img-responsive") %>
           </div>
         <!-- margin: 0 0px 0px -25px; float :left;-->
       </div>
