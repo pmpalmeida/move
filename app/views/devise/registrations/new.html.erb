@@ -1,51 +1,60 @@
 
-
-
-
 <div class="wrapper-devise">
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-3 col-sm-6">
     <br>
 
-<div class="border-form-div">
-<h2>Sign up</h2>
+      <div class="form-div">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <center><h2>Cadastre-se</h2></center>
 
-  <div class="form-inputs">
-
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
 
-    <%= f.input :name, required: true, autofocus: true %>
+          <div class="form-group string required user_name">
+            <label class="control-label string required" for="user_name">Nome:</label>
+            <input class="form-control string required" autofocus="autofocus" required="required" aria-required="true" placeholder="Maria" type="text" name="user[name]" id="user_name">
+          </div>
 
-    <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :email, required: true, autofocus: true, placeholder: "maria@gmail.com"  %>
 
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+          <%= f.input :password, required: true,placeholder: "......",label: "Senha",  hint: ("#{@minimum_password_length} caracteres (minimo)" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true, label: "Confirmacao de senha" %>
 
-    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Homem" %> </div>
-    <div><%= f.check_box :is_female, {:checked => false}, required: true%> <%= f.label :is_female, "Mulher (Modelo)" %> </div>
-    <br>
+          <%= f.input :gender, collection: User::STATUSES, label: "Tipo de conta:", placeholder: "Cliente ou Profissional?" %>
 
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+          <!-- INICIO - Botao para upload de foto -->
+          <div class="photo-border">
+          <center>
+            <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+            <br>
+             <div class="form-group file required user_photo">
+               <label class="control-label file optional" for="user_photo">
+                <div class="btn btn-default">Foto de Perfil</div>
+               </label>
+               <input class="file optional hide" type="file" name="user[photo]" id="user_photo">
+             </div>
+          </center>
+          </div>
+          <!-- FIM - Botao para upload de foto -->
 
-  </div>
+             <%= f.button :submit, "Sign up", class: "btn btn-danger full-width" %>
+
+          <% end %>
+          <br>
+
+        <center>
+        <%= render "devise/shared/links" %>
+        </center>
+
+        </div>
 
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-<br>
-<br>
-
-<%= render "devise/shared/links" %>
-</div>
+      </div>
 
     </div>
   </div>
 </div>
-</div>
+

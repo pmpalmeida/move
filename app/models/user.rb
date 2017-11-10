@@ -14,8 +14,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  STATUSES = ["male", "female"]
-  validates :status, inclusion: {in: STATUSES}
+  STATUSES = ["Homem / Cliente", "Mulher / Profissional"]
+
+  validates :gender, inclusion: {in: STATUSES}
 
 end
 
