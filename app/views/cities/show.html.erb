@@ -13,13 +13,24 @@
 <br>
 <!--FIM - Divisor com logo e titulo da cidade -->
 
+
+<!--Carousel black & white -->
 <div class='container'>
   <div class="header-carousel">
 
     <div class="card">
       <center>
       <%= link_to pprofile_path(Pprofile.last) do %>
-        <%= image_tag(Pprofile.last.photo1.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <%= image_tag(Pprofile.last.photo1, class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px;"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
+    </div>
+
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo2, class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
         <p style="max-width:120px"><%=Pprofile.last.name%></p>
         <% end %>
       </center>
@@ -28,16 +39,7 @@
     <div class="card">
       <center>
       <%= link_to pprofile_path(Pprofile.last) do %>
-        <%= image_tag(Pprofile.last.photo2.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
-        <p style="max-width:120px"><%=Pprofile.last.name%></p>
-        <% end %>
-      </center>
-    </div>
-
-    <div class="card">
-      <center>
-      <%= link_to pprofile_path(Pprofile.last) do %>
-        <%= image_tag(Pprofile.last.photo3.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <%= image_tag(Pprofile.last.photo3, class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
         <p style="max-width:120px"><%=Pprofile.last.name%></p>
         <% end %>
       </center>
@@ -80,59 +82,37 @@
     </div>
 
 
-
   </div>
 </div>
+<!--FIM - Carousel black & white -->
 
 
-<!-- BLOCO - FOTOS DE INICIO DA CIDADE-->
+<!-- IMAGE GRID - BEGINING -->
+<br>
 <br>
 <div class="container">
-  <div class="row">
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+<center>
+  <div style="display: flex;">
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
+      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover; height: 50vh;outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
+      <p style="margin-top: -50px; background: red; z-index: 100000">teste sobreposicao</p>
+    </div>
 
-        <div class="flex-mosaic">
-          <p class="star-destaq">
-            <bold>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            DESTAQUES
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            </bold>
-          </p>
-          <center>
-            <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover;height: 53vh; outline: 1px solid black; outline-offset: -4px; float: right", class: "img-responsive") %>
-          </center>
-        </div>
+    <div style="border-style: solid; border-width: 1px; border-color: black;">
 
-      </div>
+      <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; height: 30vh; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
 
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover;height: 20vh; outline: 1px solid black; outline-offset: -4px;", class: "img-responsive") %>
 
-          <div>
-          <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; height: 25vh; outline: 1px solid black; outline-offset: -4px; width: 100%;", class: "img-responsive") %>
+    </div>
+  </div>
+</center>
+</div>
+<!-- IMAGE GRID - END -->
 
-          <br>
-
-          <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; height: 24.75vh; outline: 1px solid black; outline-offset: -4px; ", class: "img-responsive") %>
-          </div>
-        <!-- margin: 0 0px 0px -25px; float :left;-->
-      </div>
-   </div>
- </div>
- <br>
-<!-- BLOCO - FOTOS DE INICIO DA CIDADE -FIM -->
 
 <!-- BLOCO - LISTA -->
+<br>
 <br>
 <div class="container">
 
@@ -216,7 +196,12 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <style>
   @media(max-width: 480px){
   .photo-mosaicA {
@@ -587,6 +572,58 @@ $('.multi-item-carousel .item').each(function(){
         </div>
       </div>
     </div>
+
+
+
+
+
+
+<!-- BLOCO - FOTOS DE INICIO DA CIDADE-->
+<br>
+<div class="container">
+  <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+        <div class="flex-mosaic">
+          <p class="star-destaq">
+            <bold>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            DESTAQUES
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            </bold>
+          </p>
+          <center>
+            <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover;height: 53vh; outline: 1px solid black; outline-offset: -4px; float: right", class: "img-responsive") %>
+          </center>
+        </div>
+
+      </div>
+
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+          <div>
+          <%= image_tag(Pprofile.last.photo2.url(), style:"object-fit: cover; height: 25vh; outline: 1px solid black; outline-offset: -4px; width: 100%;", class: "img-responsive") %>
+
+          <br>
+
+          <%= image_tag(Pprofile.last.photo3.url(), style:"object-fit: cover; height: 24.75vh; outline: 1px solid black; outline-offset: -4px; ", class: "img-responsive") %>
+          </div>
+        <!-- margin: 0 0px 0px -25px; float :left;-->
+      </div>
+   </div>
+ </div>
+ <br>
+<!-- BLOCO - FOTOS DE INICIO DA CIDADE -FIM -->
 
 
 
