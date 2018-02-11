@@ -15,44 +15,74 @@
 
 <div class='container'>
   <div class="header-carousel">
+
     <div class="card">
-    <%= image_tag(Pprofile.last.photo1.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; object-fit: cover; padding: 3px")%>
-    <p>TESTE</p>
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo1.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
 
-     <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
-    <p>TESTE</p>
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo2.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
 
-     <div class="card">
-    <%= image_tag(Pprofile.last.photo2.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
-    <p>TESTE</p>
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo3.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
 
-     <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
-    <p>TESTE</p>
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo4.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
 
-     <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
-    <p>TESTE</p>
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo5.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
 
-     <div class="card">
-    <%= image_tag(Pprofile.last.photo3.url(:city), class: "img-responsive", style:"filter: grayscale(100%); max-height: 200px; padding: 3px")%>
-    <p>TESTE</p>
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo6.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
     </div>
+
+    <div class="card">
+      <center>
+      <%= link_to pprofile_path(Pprofile.last) do %>
+        <%= image_tag(Pprofile.last.photo7.url(:city), class:"img-responsive greyscale", style:"height: 150px; object-fit: cover; padding: 3px")%>
+        <p style="max-width:120px"><%=Pprofile.last.name%></p>
+        <% end %>
+      </center>
+    </div>
+
+
 
   </div>
 </div>
-
-<!-- GRID INICIO -->
-
-<!-- xxxxxxxxxxxxxxxx -->
-
-<!-- GRID FIM -->
 
 
 <!-- BLOCO - FOTOS DE INICIO DA CIDADE-->
@@ -63,7 +93,15 @@
 
         <div class="flex-mosaic">
           <p class="star-destaq">
-            <bold>destaques
+            <bold>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            DESTAQUES
+            <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -71,7 +109,6 @@
             <i class="fa fa-star" aria-hidden="true"></i>
             </bold>
           </p>
-
           <center>
             <%= image_tag(Pprofile.last.photo1.url(), style:"object-fit: cover;height: 53vh; outline: 1px solid black; outline-offset: -4px; float: right", class: "img-responsive") %>
           </center>
@@ -550,427 +587,10 @@ $('.multi-item-carousel .item').each(function(){
         </div>
       </div>
     </div>
-<br>
-<br>
 
-<div class="container" style="align-items: center">
 
-<div style="display: flex;">
-  <div>
-    <img src="http://placehold.it/700x400" alt="" style="padding: 2px" class="img-responsive">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x198" alt="" style="padding: 2px" class="img-responsive">
-    <img src="http://placehold.it/350x198" alt="" style="padding: 2px" class="img-responsive">
-    <img src="" alt="">
-  </div>
-</div>
 
 </div>
-
-
-<br>
-<br>
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-
-
-    </div>
-  </div>
-
-</div>
-
-
-<br>
-<br>
-<br>
-  <div style="max-width: 700px;">
-    <%= image_tag(Pprofile.last.photo3.url(:cover), style: " display: block; max-width: 100%; max-height: 100%; width: auto; height: auto;")%>
-  </div>
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-
-
-<!-- CAROUSEL BEGINING **************************8888-->
-    <div id="public_profile" class="carousel slide" data-ride="carousel" class="hide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-         <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-        <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-
-
-        <!-- ITEM BEGINING -->
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-
-        </div>
-        <!-- ITEM ENDING -->
-
-
-
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#public_profile" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#public_profile" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-  </div>
-  <!-- CAROUSEL END ************************************-->
-
-
-
-<br>
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<hr/>
-
-
-
-
-
-
-
-<!-- ffffffffffffffffffffffffffffffffffffffffffffffffff -->
-<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-
-
-<!-- CAROUSEL BEGINING **************************8888-->
-    <div id="public_profile" class="carousel slide" data-ride="carousel" class="hide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-         <img src="http://placehold.it/300x100" alt="...">
-        </div>
-
-        <div class="item">
-
-          <a href="http://www.google.com">
-
-            <div class="container">
-            <div style="display: flex; align-items: center; margin-bottom:-50px">
-              <img align="left" class="card-img-top img-circle" style="margin: 5px; z-index: 4" src="http://lorempixel.com/40/40/people/9/">
-              <div>
-                <p class="headerpost" align="left" style="z-index: 4">ssssss</p>
-                <p class="headerpost" align="left" style="z-index: 4"><i class="fa fa-phone-square"></i> ssss  - ssss  (Jardins)</p>
-              </div>
-            </div>
-
-            </div>
-            <br>
-
-            <%= image_tag(User.find(18).photo, style: "margin: auto;") %>
-
-
-          </a>
-
-        </div>
-
-        <div class="item">
-
-         <a href="http://www.google.com"">
-
-            <div class="container" style="max-width: 600px;  padding:0;">
-              <div  style="z-index: 5; position: relative;">
-                <h3 class="pull-right headerpost">15/05/1990</h3>
-                <div class="flexpost">
-                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
-                  <div>
-                    <h3 class="headerpost" align="left" style="color: black">Joana</h3>
-                    <h3 class="headerpost" style="color: black">Sao Paulo (Jardins)</h3>
-                  </div>
-                </div>
-              </div>
-              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
-            </div>
-
-          </a>
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/300x100" alt="...">
-        </div>
-        <div class="item">
-                <a href="http://www.google.com"">
-
-            <div class="container" style="max-width: 600px;  padding:0;">
-              <div  style="background-color: black; z-index: 5; position: relative;">
-                <h3 class="pull-right headerpost">15/05/1990</h3>
-                <div class="flexpost">
-                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
-                  <div>
-                    <h3 class="headerpost" align="left">Joana</h3>
-                    <h3 class="headerpost"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
-                  </div>
-                </div>
-              </div>
-              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
-            </div>
-
-          </a>
-        </div>
-
-
-
-        <!-- ITEM BEGINING -->
-        <div class="item">
-
-          <a href="http://www.google.com"">
-
-            <div class="container" style="max-width: 500px;  padding:0;">
-              <div  style="background-color: black; z-index: 5; position: relative;">
-                <h3 class="pull-right headerpost">15/05/1990</h3>
-                <div class="flexpost">
-                  <img align="left" class="card-img-top img-circle" style="padding: 3px" src="http://lorempixel.com/30/30/people/9/" alt="Profile image example"/>
-                  <div>
-                    <h3 class="headerpost" align="left" style="color: white">Joana</h3>
-                    <h3 class="headerpost" style="color: white"><i class="fa fa-phone-square"></i> 11 6673883 - Sao Paulo (Jardins)</h3>
-                  </div>
-                </div>
-              </div>
-              <%= image_tag(User.find(18).photo, style: "width: 100%; object-fit: contain; z-index: 1; margin-top: -50px") %>
-            </div>
-
-          </a>
-
-        </div>
-        <!-- ITEM ENDING -->
-
-
-
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#public_profile" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#public_profile" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-  </div>
-  <!-- CAROUSEL END ************************************-->
-<br>
-<hr/>
-
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <center>
-        <img src="http://placehold.it/160x160" alt="...">
-        <p>name pporfile</p>
-      </center>
-    </div>
-
-
-
-    </div>
-  </div>
 
 </div>
 

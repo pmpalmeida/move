@@ -81,3 +81,11 @@
   writing-mode: vertical-rl;
 
 }
+
+
+.greyscale {
+  filter: grayscale(100%);
+    &:hover {
+      filter: grayscale(0%)
+  }
+}
