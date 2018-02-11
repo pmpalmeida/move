@@ -5,8 +5,7 @@
   <!-- CAROUSEL BEGINING **************************8888-->
     <div id="public_profile" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators" style="position: absolute;
-    bottom: 10px; left: 50%">
+      <ol class="carousel-indicators" style="position: absolute; left: 50%">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
@@ -49,16 +48,16 @@
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
-            <%= image_tag @pprofile.photo5, style: "width: 100%; object-fit: contain; z-index: 1;" %>
-          </div>
+
+            <%= image_tag @pprofile.photo5, style: "width: 100%; height: 450px; object-fit: contain; z-index: 1;"  %>
+
         </div>
         <!-- ITEM ENDING -->
          <!-- ITEM BEGINNING -->
         <div class="item">
-          <div class="container" style="max-width: 800px;  max-height: 450px;  padding: 0px;">
-            <%= image_tag @pprofile.photo6, style: "width: 100%; object-fit: contain; z-index: 1;" %>
-          </div>
+
+            <%= image_tag @pprofile.photo6, style: "width: 100%; height: 450px; object-fit: contain; z-index: 1;" %>
+
         </div>
         <!-- ITEM ENDING -->
         <!-- ITEM BEGINNING -->
@@ -90,20 +89,22 @@
     <!-- PROFILE BEGINING -->
   <div class="container" style="max-width: 800px; margin:0px auto !important; background-color: white">
 
-    <!-- IMG PROFILE -->
-    <img align="left" class="thumbnail" style="z-index: 100; position: relative; margin-top: -40px; margin-right: 10px; height: 100vh; max-height:130px;" src="http://lorempixel.com/90/90/people/9/"/>
-    <!-- IMG PROFILE END -->
-
-    <!-- CONTACT PROFILE -->
     <div style="margin: 0px -15px; background-color: black"> <p style="padding: 2px"></div>
 
-    <div style="margin-top: -10px">
-      <h1 style="font-size: 4vh; font-style: bold; margin-bottom:-10px"><%= @pprofile.name %></h1>
-      <h2 style="font-size: 2vh; margin-bottom:-10px"><i class="fa fa-phone-square fa-fw fa-1x"></i><%= @pprofile.phone_number.to_s%> - <%=@pprofile.cityname%> - <%=@pprofile.neighborhood%></h2>
-    </div>
-    <!-- CONTACT PROFILE END -->
+    <div style="display: flex">
+      <!-- IMG PROFILE -->
+      <%= image_tag @pprofile.photo3, class: "thumbnail", style: "z-index: 100; position: relative; margin-top: -40px; margin-right: 10px; height: 100vh; max-height:120px; max-width: 120px" %>
+      <!-- IMG PROFILE END -->
 
-    <br>
+      <!-- CONTACT PROFILE -->
+      <div style="margin-top: -10px">
+        <h1 style="font-size: 4vh; font-style: bold; margin-bottom:-10px"><%= @pprofile.name %></h1>
+        <h2 style="font-size: 2vh; margin-bottom:-15px"><i class="fa fa-phone-square fa-fw fa-1x"></i> <%=@pprofile.phone_number.to_s%></h2>
+        <h2 style="font-size: 2vh;"> <i class="fa fa-map-marker fa-fw fa-1x"></i> <%=@pprofile.cityname%> - <%=@pprofile.neighborhood%></h2>
+      </div>
+      <!-- CONTACT PROFILE END -->
+    </div>
+
     <br>
     <br>
     <center><h4  style="font-style: italic;"> <%= @pprofile.description %>" </h4></center>
