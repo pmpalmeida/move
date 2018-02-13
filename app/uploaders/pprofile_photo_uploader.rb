@@ -6,7 +6,7 @@ class PprofilePhotoUploader < CarrierWave::Uploader::Base
 
 # default URL caso nao haja foto
   def default_url
-    'defaultfemale.png'
+    'logo2.png'
   end
 
   version :standard do

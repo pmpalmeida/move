@@ -12,6 +12,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+  STATUSES = ["Usuario (Homem)", "Profissional (Mulher)"]
+
+  validates :gender, inclusion: {in: STATUSES}
+
 end
 
 
